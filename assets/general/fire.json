@@ -1,0 +1,293 @@
+{
+	"textures": [
+		{
+			"image": "fire.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 922,
+				"h": 2377
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "fire_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 592,
+						"h": 533
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 14,
+						"w": 582,
+						"h": 516
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 582,
+						"h": 516
+					}
+				},
+				{
+					"filename": "fire_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 592,
+						"h": 533
+					},
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 14,
+						"w": 578,
+						"h": 516
+					},
+					"frame": {
+						"x": 1,
+						"y": 519,
+						"w": 578,
+						"h": 516
+					}
+				},
+				{
+					"filename": "fire_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 592,
+						"h": 533
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 20,
+						"w": 587,
+						"h": 510
+					},
+					"frame": {
+						"x": 1,
+						"y": 1037,
+						"w": 587,
+						"h": 510
+					}
+				},
+				{
+					"filename": "fire_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 592,
+						"h": 533
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 25,
+						"w": 547,
+						"h": 503
+					},
+					"frame": {
+						"x": 1,
+						"y": 1549,
+						"w": 547,
+						"h": 503
+					}
+				},
+				{
+					"filename": "tourch_lit_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 377,
+						"h": 452
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 0,
+						"w": 331,
+						"h": 452
+					},
+					"frame": {
+						"x": 585,
+						"y": 1,
+						"w": 331,
+						"h": 452
+					}
+				},
+				{
+					"filename": "tourch_lit_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 377,
+						"h": 452
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 6,
+						"w": 331,
+						"h": 446
+					},
+					"frame": {
+						"x": 590,
+						"y": 455,
+						"w": 331,
+						"h": 446
+					}
+				},
+				{
+					"filename": "tourch_lit_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 377,
+						"h": 452
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 18,
+						"w": 331,
+						"h": 434
+					},
+					"frame": {
+						"x": 590,
+						"y": 903,
+						"w": 331,
+						"h": 434
+					}
+				},
+				{
+					"filename": "tourch_lit_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 377,
+						"h": 452
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 20,
+						"w": 331,
+						"h": 432
+					},
+					"frame": {
+						"x": 590,
+						"y": 1339,
+						"w": 331,
+						"h": 432
+					}
+				},
+				{
+					"filename": "tourch_lit_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 377,
+						"h": 452
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 25,
+						"w": 331,
+						"h": 427
+					},
+					"frame": {
+						"x": 550,
+						"y": 1773,
+						"w": 331,
+						"h": 427
+					}
+				},
+				{
+					"filename": "candle_flame_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 190,
+						"h": 210
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 22,
+						"w": 186,
+						"h": 188
+					},
+					"frame": {
+						"x": 1,
+						"y": 2054,
+						"w": 186,
+						"h": 188
+					}
+				},
+				{
+					"filename": "candle_flame_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 190,
+						"h": 210
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 30,
+						"w": 186,
+						"h": 180
+					},
+					"frame": {
+						"x": 189,
+						"y": 2054,
+						"w": 186,
+						"h": 180
+					}
+				},
+				{
+					"filename": "candle_flame_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 190,
+						"h": 210
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 37,
+						"w": 186,
+						"h": 173
+					},
+					"frame": {
+						"x": 377,
+						"y": 2202,
+						"w": 186,
+						"h": 173
+					}
+				},
+				{
+					"filename": "candle_flame_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 190,
+						"h": 210
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 36,
+						"w": 186,
+						"h": 174
+					},
+					"frame": {
+						"x": 565,
+						"y": 2202,
+						"w": 186,
+						"h": 174
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:d5d9f9fe48d54a5ea157def705476660:36c27c6cba864de82141a1f3c7a7bb46:fe85b518f19a08db92d89ee48ba7169f$"
+	}
+}
