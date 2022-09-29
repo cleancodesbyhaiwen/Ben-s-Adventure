@@ -8,34 +8,59 @@ export class castleScene3 extends Phaser.Scene {
     }
     preload(){
         this.load.image("background-scene3","./assets/castle-scene3/background.png");
+        this.load.image("book_green","./assets/castle-scene3/book_green.png");
+        this.load.image("letter_content2","./assets/castle-scene3/letter_content.png");
+        this.load.audio('earth_shaking', 'assets/castle-scene3/earth_shaking.mp3');
     }
     create(){
         this.background_music = this.sound.add('background_music');
         this.background_music.play({loop:true});
-        this.door_open = this.sound.add('door_open_sound');
+        const door_open = this.sound.add('door_open_sound');
+        const earth_shaking_sound = this.sound.add('earth_shaking');
 
-        this.background = this.add.tileSprite(2259,400,4518,800,'background-scene3').setScale(1.01);
+        this.add.tileSprite(2259,400,4518,800,'background-scene3').setScale(1.01);
+        const book_green = this.add.sprite(3000, 445, 'book_green').setScale(0.5).setInteractive();
+        book_green.on('pointerdown',function(){
+            let scene = this;
+            this.add.tween({
+                targets: book_green,
+                x: 2910,
+                ease: 'Linear',
+                duration: 3000,
+                repeat: 0,
+                onComplete: function(){
+                    earth_shaking_sound.play();
+                    scene.cameras.main.shake(3000);
+                    scene.physics.add.sprite(2900, -10, 'letter').setScale(0.08).setCollideWorldBounds(true)
+                    .setInteractive().on('pointerdown',function(){
+                        scene.scene.launch('letter-scene2');
+                    },scene);
+                }
+            },scene)
+        },this)
+
 
         this.add.image(100,400,'pillar').setScale(0.35,0.435).setDepth(3);
         this.add.image(4150,400,'pillar').setScale(0.35,0.435).setDepth(3);
 
-        this.door_open_up = this.add.sprite(400,335,'door_open_down').setScale(0.5).setInteractive();
-        this.door = this.add.sprite(800,335,'door_closed').setScale(0.5).setInteractive();
-        this.door_open_up.on('pointerdown',function(){
+        const door_open_down = this.add.sprite(400,335,'door_open_down').setScale(0.5).setInteractive();
+        const door = this.add.sprite(800,335,'door_closed').setScale(0.5).setInteractive();
+        door_open_down.on('pointerdown',function(){
+            this.background_music.pause();
             this.scene.switch('castle-scene2');
         },this)
-        this.flames = this.add.group();
-        this.flames.create(2170,135,'fire').setScale(0.5);
-        this.flames.create(2244,155,'fire').setScale(0.5);
-        this.flames.create(2310,145,'fire').setScale(0.5);
-        this.flames.create(2360,145,'fire').setScale(0.5);
-        this.flames.create(2436,145,'fire').setScale(0.5);
-        this.flames.children.iterate(function (flame) {
+        const flames = this.add.group();
+        flames.create(2170,135,'fire').setScale(0.5);
+        flames.create(2244,155,'fire').setScale(0.5);
+        flames.create(2310,145,'fire').setScale(0.5);
+        flames.create(2360,145,'fire').setScale(0.5);
+        flames.create(2436,145,'fire').setScale(0.5);
+        flames.children.iterate(function (flame) {
             flame.anims.play('candle_flame');
         });
              
-        this.torch = this.add.sprite(4025,200,'fire').setScale(0.5).setInteractive();
-        this.torch.anims.play('torch',true);
+        const torch = this.add.sprite(4025,200,'fire').setScale(0.5).setInteractive();
+        torch.anims.play('torch',true);
 
         this.cameras.main.setBounds(0, 0, 4518, 100);
         this.physics.world.setBounds(0, 0, 4518,650);
@@ -44,19 +69,35 @@ export class castleScene3 extends Phaser.Scene {
         this.player = Helper.createPlayer(this, 600, 400);
         this.player.setDepth(2);
 
-        this.bat = this.physics.add.sprite(600, 550, 'bat').setScale(0.2).anims.play('fly_mouth_closed');
-        this.bat.body.setAllowGravity(false);
-        this.bat.body.setImmovable(true);
-        this.bat.health = 100;
-        this.physics.add.collider(this.bat, this.flareGroup, this.hit, null, this);
+        const bat = this.physics.add.sprite(600, 550, 'bat').setScale(0.2).anims.play('fly_mouth_closed');
+        bat.body.setAllowGravity(false);
+        bat.body.setImmovable(true);
+        bat.health = 100;
+        this.physics.add.collider(bat, this.flareGroup, this.hit, null, this);
     }      
     hit(bat,flare){
         flare.setVisible(false);
         bat.health--;
     } 
     update(){
-        //console.log(this.bat.health)
+        console.log(this.player.x)
+        if(this.background_music.isPaused){
+            this.background_music.play({loop:true});
+        }
         Helper.updatePlayer(this,this.player,this.KeyA,this.KeyD,this.KeyW,this.KeyS,this.KeySHIFT,this.KeySPACE);
     }
 }
 
+export class letterScene2 extends Phaser.Scene {
+    constructor(){
+        super({
+            key: "letter-scene2"
+        })
+    }
+    create(){
+        this.add.sprite(600,400,'letter_content2')
+        this.input.on('pointerdown',function(){
+            this.scene.stop();
+        },this);
+    }
+}
