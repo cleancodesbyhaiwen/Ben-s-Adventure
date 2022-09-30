@@ -1,0 +1,1385 @@
+{
+	"textures": [
+		{
+			"image": "spider.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4084,
+				"h": 3237
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "__purple_black_widow_die_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 67,
+						"y": 195,
+						"w": 543,
+						"h": 303
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 543,
+						"h": 303
+					}
+				},
+				{
+					"filename": "__purple_black_widow_die_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 37,
+						"y": 178,
+						"w": 589,
+						"h": 311
+					},
+					"frame": {
+						"x": 546,
+						"y": 1,
+						"w": 589,
+						"h": 311
+					}
+				},
+				{
+					"filename": "__purple_black_widow_die_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 36,
+						"y": 182,
+						"w": 591,
+						"h": 309
+					},
+					"frame": {
+						"x": 1137,
+						"y": 1,
+						"w": 591,
+						"h": 309
+					}
+				},
+				{
+					"filename": "__purple_black_widow_move_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 100,
+						"w": 523,
+						"h": 382
+					},
+					"frame": {
+						"x": 1730,
+						"y": 1,
+						"w": 523,
+						"h": 382
+					}
+				},
+				{
+					"filename": "__purple_black_widow_move_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 100,
+						"w": 523,
+						"h": 387
+					},
+					"frame": {
+						"x": 2255,
+						"y": 1,
+						"w": 523,
+						"h": 387
+					}
+				},
+				{
+					"filename": "__purple_black_widow_move_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 110,
+						"y": 100,
+						"w": 538,
+						"h": 390
+					},
+					"frame": {
+						"x": 2780,
+						"y": 1,
+						"w": 538,
+						"h": 390
+					}
+				},
+				{
+					"filename": "__purple_black_widow_bite_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 91,
+						"y": 78,
+						"w": 541,
+						"h": 404
+					},
+					"frame": {
+						"x": 3320,
+						"y": 1,
+						"w": 541,
+						"h": 404
+					}
+				},
+				{
+					"filename": "__purple_black_widow_die_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 68,
+						"y": 143,
+						"w": 603,
+						"h": 344
+					},
+					"frame": {
+						"x": 1,
+						"y": 407,
+						"w": 603,
+						"h": 344
+					}
+				},
+				{
+					"filename": "__purple_black_widow_move_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 110,
+						"y": 92,
+						"w": 571,
+						"h": 392
+					},
+					"frame": {
+						"x": 606,
+						"y": 407,
+						"w": 571,
+						"h": 392
+					}
+				},
+				{
+					"filename": "__purple_black_widow_bite_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 78,
+						"y": 49,
+						"w": 538,
+						"h": 435
+					},
+					"frame": {
+						"x": 1179,
+						"y": 407,
+						"w": 538,
+						"h": 435
+					}
+				},
+				{
+					"filename": "__purple_black_widow_bite_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 82,
+						"y": 49,
+						"w": 539,
+						"h": 435
+					},
+					"frame": {
+						"x": 1719,
+						"y": 407,
+						"w": 539,
+						"h": 435
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_base_009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_bite_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_die_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_hurt_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 110,
+						"w": 607,
+						"h": 372
+					},
+					"frame": {
+						"x": 2260,
+						"y": 407,
+						"w": 607,
+						"h": 372
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_019.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 108,
+						"w": 606,
+						"h": 374
+					},
+					"frame": {
+						"x": 2869,
+						"y": 407,
+						"w": 606,
+						"h": 374
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 107,
+						"w": 606,
+						"h": 375
+					},
+					"frame": {
+						"x": 3477,
+						"y": 407,
+						"w": 606,
+						"h": 375
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_018.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 106,
+						"w": 606,
+						"h": 376
+					},
+					"frame": {
+						"x": 1,
+						"y": 844,
+						"w": 606,
+						"h": 376
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 105,
+						"w": 607,
+						"h": 377
+					},
+					"frame": {
+						"x": 609,
+						"y": 844,
+						"w": 607,
+						"h": 377
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_017.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 104,
+						"w": 608,
+						"h": 379
+					},
+					"frame": {
+						"x": 1218,
+						"y": 844,
+						"w": 608,
+						"h": 379
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 103,
+						"w": 608,
+						"h": 380
+					},
+					"frame": {
+						"x": 1828,
+						"y": 844,
+						"w": 608,
+						"h": 380
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_016.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 102,
+						"w": 608,
+						"h": 381
+					},
+					"frame": {
+						"x": 2438,
+						"y": 844,
+						"w": 608,
+						"h": 381
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 101,
+						"w": 608,
+						"h": 382
+					},
+					"frame": {
+						"x": 3048,
+						"y": 844,
+						"w": 608,
+						"h": 382
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_015.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 108,
+						"y": 101,
+						"w": 608,
+						"h": 382
+					},
+					"frame": {
+						"x": 1,
+						"y": 1228,
+						"w": 608,
+						"h": 382
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 99,
+						"w": 609,
+						"h": 384
+					},
+					"frame": {
+						"x": 611,
+						"y": 1228,
+						"w": 609,
+						"h": 384
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_014.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 99,
+						"w": 609,
+						"h": 384
+					},
+					"frame": {
+						"x": 1222,
+						"y": 1228,
+						"w": 609,
+						"h": 384
+					}
+				},
+				{
+					"filename": "__purple_black_widow_move_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 108,
+						"w": 603,
+						"h": 391
+					},
+					"frame": {
+						"x": 1833,
+						"y": 1228,
+						"w": 603,
+						"h": 391
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 97,
+						"w": 609,
+						"h": 386
+					},
+					"frame": {
+						"x": 2438,
+						"y": 1228,
+						"w": 609,
+						"h": 386
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_013.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 97,
+						"w": 609,
+						"h": 386
+					},
+					"frame": {
+						"x": 3049,
+						"y": 1228,
+						"w": 609,
+						"h": 386
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_012.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 95,
+						"w": 609,
+						"h": 388
+					},
+					"frame": {
+						"x": 1,
+						"y": 1621,
+						"w": 609,
+						"h": 388
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 110,
+						"y": 115,
+						"w": 622,
+						"h": 375
+					},
+					"frame": {
+						"x": 612,
+						"y": 1621,
+						"w": 622,
+						"h": 375
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 94,
+						"w": 609,
+						"h": 389
+					},
+					"frame": {
+						"x": 1236,
+						"y": 1621,
+						"w": 609,
+						"h": 389
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_011.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 94,
+						"w": 609,
+						"h": 389
+					},
+					"frame": {
+						"x": 1847,
+						"y": 1621,
+						"w": 609,
+						"h": 389
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 92,
+						"w": 609,
+						"h": 391
+					},
+					"frame": {
+						"x": 2458,
+						"y": 1621,
+						"w": 609,
+						"h": 391
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_010.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 92,
+						"w": 609,
+						"h": 391
+					},
+					"frame": {
+						"x": 3069,
+						"y": 1621,
+						"w": 609,
+						"h": 391
+					}
+				},
+				{
+					"filename": "__purple_black_widow_idle_009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 107,
+						"y": 90,
+						"w": 609,
+						"h": 392
+					},
+					"frame": {
+						"x": 1,
+						"y": 2014,
+						"w": 609,
+						"h": 392
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 112,
+						"y": 119,
+						"w": 632,
+						"h": 376
+					},
+					"frame": {
+						"x": 612,
+						"y": 2014,
+						"w": 632,
+						"h": 376
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 113,
+						"y": 122,
+						"w": 636,
+						"h": 373
+					},
+					"frame": {
+						"x": 1246,
+						"y": 2014,
+						"w": 636,
+						"h": 373
+					}
+				},
+				{
+					"filename": "__purple_black_widow_hurt_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 92,
+						"y": 119,
+						"w": 648,
+						"h": 363
+					},
+					"frame": {
+						"x": 1884,
+						"y": 2014,
+						"w": 648,
+						"h": 363
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 115,
+						"y": 127,
+						"w": 649,
+						"h": 362
+					},
+					"frame": {
+						"x": 2534,
+						"y": 2014,
+						"w": 649,
+						"h": 362
+					}
+				},
+				{
+					"filename": "__purple_black_widow_bite_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 118,
+						"y": 94,
+						"w": 617,
+						"h": 397
+					},
+					"frame": {
+						"x": 3185,
+						"y": 2014,
+						"w": 617,
+						"h": 397
+					}
+				},
+				{
+					"filename": "__purple_black_widow_move_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 109,
+						"y": 101,
+						"w": 628,
+						"h": 393
+					},
+					"frame": {
+						"x": 1,
+						"y": 2413,
+						"w": 628,
+						"h": 393
+					}
+				},
+				{
+					"filename": "__purple_black_widow_hurt_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 78,
+						"y": 139,
+						"w": 679,
+						"h": 343
+					},
+					"frame": {
+						"x": 631,
+						"y": 2413,
+						"w": 679,
+						"h": 343
+					}
+				},
+				{
+					"filename": "__purple_black_widow_hurt_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 77,
+						"y": 140,
+						"w": 680,
+						"h": 342
+					},
+					"frame": {
+						"x": 1312,
+						"y": 2413,
+						"w": 680,
+						"h": 342
+					}
+				},
+				{
+					"filename": "__purple_black_widow_hurt_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 78,
+						"y": 138,
+						"w": 678,
+						"h": 344
+					},
+					"frame": {
+						"x": 1994,
+						"y": 2413,
+						"w": 678,
+						"h": 344
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 116,
+						"y": 120,
+						"w": 654,
+						"h": 369
+					},
+					"frame": {
+						"x": 2674,
+						"y": 2413,
+						"w": 654,
+						"h": 369
+					}
+				},
+				{
+					"filename": "__purple_black_widow_move_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 85,
+						"y": 92,
+						"w": 640,
+						"h": 391
+					},
+					"frame": {
+						"x": 3330,
+						"y": 2413,
+						"w": 640,
+						"h": 391
+					}
+				},
+				{
+					"filename": "__purple_black_widow_bite_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 134,
+						"y": 89,
+						"w": 640,
+						"h": 401
+					},
+					"frame": {
+						"x": 1,
+						"y": 2808,
+						"w": 640,
+						"h": 401
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 119,
+						"y": 96,
+						"w": 658,
+						"h": 393
+					},
+					"frame": {
+						"x": 643,
+						"y": 2808,
+						"w": 658,
+						"h": 393
+					}
+				},
+				{
+					"filename": "__purple_black_widow_bite_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 133,
+						"y": 89,
+						"w": 655,
+						"h": 400
+					},
+					"frame": {
+						"x": 1303,
+						"y": 2808,
+						"w": 655,
+						"h": 400
+					}
+				},
+				{
+					"filename": "__purple_black_widow_move_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 94,
+						"y": 110,
+						"w": 707,
+						"h": 374
+					},
+					"frame": {
+						"x": 1960,
+						"y": 2808,
+						"w": 707,
+						"h": 374
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 124,
+						"y": 56,
+						"w": 662,
+						"h": 427
+					},
+					"frame": {
+						"x": 2669,
+						"y": 2808,
+						"w": 662,
+						"h": 427
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 124,
+						"y": 55,
+						"w": 662,
+						"h": 428
+					},
+					"frame": {
+						"x": 3333,
+						"y": 2808,
+						"w": 662,
+						"h": 428
+					}
+				},
+				{
+					"filename": "__purple_black_widow_squirt_web_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 820,
+						"h": 500
+					},
+					"spriteSourceSize": {
+						"x": 124,
+						"y": 55,
+						"w": 662,
+						"h": 428
+					},
+					"frame": {
+						"x": 3333,
+						"y": 2808,
+						"w": 662,
+						"h": 428
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b40ae933a82124f507fe7ca37aa2a04b:5d464351d149dc3468b495ff055b9654:1061686de59298529f6a4fc7550209ec$"
+	}
+}

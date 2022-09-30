@@ -1,4 +1,5 @@
-import {Helper} from './Helper.js'
+import {PlayerHelper} from './PlayerHelper.js'
+import {EnemyHelper} from './EnemyHelper.js'
 
 export class castleScene2 extends Phaser.Scene {
     constructor(){
@@ -48,36 +49,41 @@ export class castleScene2 extends Phaser.Scene {
         const torch = this.add.sprite(4015,200,'fire').setScale(0.5).setInteractive();
         torch.anims.play('torch',true);
         torch.on('pointerdown',function(){
-            let scene = this;
-            this.add.tween({
-                targets: torch,
-                angle: -90,
-                x: 3560,
-                y:450,
-                ease: 'Linear',
-                yoyo: true,
-                duration: 3000,
-                repeat: 0,
-                onYoyo: function(){
-                    scene.add.sprite(3535, 450, 'fire').setScale(0.2).anims.play('fireplace_fire');
-                    door_open.play();
-                    door.setTexture('door_open_up')
-                }
-            },scene)
-        },this)
+            if(this.spider.died){
+                let scene = this;
+                this.add.tween({
+                    targets: torch,
+                    angle: -90,
+                    x: 3560,
+                    y:450,
+                    ease: 'Linear',
+                    yoyo: true,
+                    duration: 3000,
+                    repeat: 0,
+                    onYoyo: function(){
+                        scene.add.sprite(3535, 450, 'fire').setScale(0.2).anims.play('fireplace_fire');
+                        door_open.play();
+                        door.setTexture('door_open_up')
+                    }
+                },scene)
+            }
+        },this);
 
         this.cameras.main.setBounds(0, 0, 4518, 100);
         this.physics.world.setBounds(0, 0, 4518,650);
 
-        Helper.createKeys(this);
-        this.player = Helper.createPlayer(this, 600, 400);
+        PlayerHelper.createKeys(this);
+        this.player = PlayerHelper.createPlayer(this, 600, 400);
         this.player.setDepth(2);
+        this.spider = EnemyHelper.createEnemy(this,2800,400,'spider','flare_hit_spider_sound',
+        'spider_attack_sound', 'bitten_by_spider_sound');
     }
     update(){
         //console.log(this.player.x)
         if(this.background_music.isPaused){
             this.background_music.play({loop:true});
         }
-        Helper.updatePlayer(this,this.player,this.KeyA,this.KeyD,this.KeyW,this.KeyS,this.KeySHIFT,this.KeySPACE);
+        PlayerHelper.updatePlayer(this,this.player,this.KeyA,this.KeyD,this.KeyW,this.KeyS,this.KeySHIFT,this.KeySPACE);
+        EnemyHelper.updateEnemy(this, this.spider, this.player, 'spider_move','spider_bite','spider_die', false,6,4);
     }
 }

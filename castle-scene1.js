@@ -1,4 +1,5 @@
-import {Helper} from './Helper.js'
+import {PlayerHelper} from './PlayerHelper.js'
+import {EnemyHelper} from './EnemyHelper.js'
 
 export class castleScene1 extends Phaser.Scene {
     constructor(){
@@ -32,22 +33,34 @@ export class castleScene1 extends Phaser.Scene {
             }
         },this)
 
+        const letter = this.add.sprite(1500,650,'letter').setScale(0.08).setInteractive();
+        letter.on('pointerdown',function(){
+            this.scene.launch('letter-scene1');
+        },this)
+
+        PlayerHelper.createKeys(this);
+        this.player = PlayerHelper.createPlayer(this, 415, 585);
+        this.knight = EnemyHelper.createEnemy(this, 2800,400,'knight','flare_hit_knight_sound'
+        ,'knight_whoosh_sound','hurt_by_knight_sound');  
+
         const wall_plaque = this.add.sprite(470, 130, 'wall_plaque').setScale(0.3).setInteractive();
         wall_plaque.angle = 180;
         wall_plaque.on('pointerdown',function(){
-            wall_plaque_rotate.play();
-            this.add.tween({
-                targets: wall_plaque,
-                angle: 0,
-                ease: 'Linear',
-                duration: 5000,
-                repeat: 0,
-                onComplete: function(){
-                    door_open.play();
-                    door.setTexture('door_open_up');
-                    come_up_stairs.play({volume: 3});
-                }
-            })
+            if(wall_plaque.angle==-180&&this.knight.died){
+                wall_plaque_rotate.play();
+                this.add.tween({
+                    targets: wall_plaque,
+                    angle: 0,
+                    ease: 'Linear',
+                    duration: 5000,
+                    repeat: 0,
+                    onComplete: function(){
+                        door_open.play();
+                        door.setTexture('door_open_up');
+                        come_up_stairs.play({volume: 3});
+                    }
+                })
+            }
         },this)
 
         const torches = this.add.group();
@@ -60,33 +73,23 @@ export class castleScene1 extends Phaser.Scene {
             torch.anims.play('torch');
         });
 
-        const letter = this.add.sprite(1500,650,'letter').setScale(0.08).setInteractive();
-        letter.on('pointerdown',function(){
-            this.scene.launch('letter-scene1');
-        },this)
-
         this.bat = this.physics.add.sprite(2400, 400, 'bat').setScale(0.2).setVelocityX(-500);
         this.bat.body.setAllowGravity(false);
         this.bat.anims.play('fly_mouth_closed');
 
         this.cameras.main.setBounds(0, 0, 2793, 100);
         this.physics.world.setBounds(0, 0, 2793,700);
-        
-        Helper.createKeys(this);
-        this.player = Helper.createPlayer(this, 415, 585);
-        this.knight = Helper.createEnemy(this, 2800,400,'knight','flare_hit_knight_sound'
-        ,'knight_whoosh_sound','hurt_by_knight_sound');    
     }            
     update(){
-        //console.log(this.player.health)
         if(this.background_music.isPaused) this.background_music.play({loop:true});
         if(Math.abs(this.bat.x-this.player.x)<30) this.sound.add('bat_squeak_sound').play();
         if(this.bat.x < -30){
             this.bat.setActive(false);
             this.bat.setVisible(false);
         }
-        Helper.updatePlayer(this, this.player);
-        Helper.updateEnemy(this, this.knight, this.player);
+        PlayerHelper.updatePlayer(this, this.player);
+        EnemyHelper.updateEnemy(this, this.knight, this.player, 
+            'knight_walk','knight_attack','knight_die',true,11,15);
     }
 }
 

@@ -1,4 +1,4 @@
-export class Helper
+export class PlayerHelper
 {
     constructor(){
         player_last_frame_index = 0;
@@ -12,9 +12,11 @@ export class Helper
         scene.flareGroup = new FlareGroup(scene);
         let player = scene.physics.add.sprite(x,y, 'explorer').setScale(0.3);
         player.flipX = false;
+        player.body.setSize(200,550);
         player.setCollideWorldBounds(true);
         player.anims.play('idle', true);
         player.health = 100;
+        player.died = false;
         scene.cameras.main.startFollow(player, true, 0.08, 0.08);
         scene.cameras.main.setZoom(1);
         scene.input.keyboard.on('keydown-' + 'S', function (event) { 
@@ -24,6 +26,8 @@ export class Helper
         });
         return player;
     }
+
+    
     //////////////////////////////////////////////////////////////////////
     ///    Update Player
     //////////////////////////////////////////////////////////////////////
@@ -37,7 +41,7 @@ export class Helper
                         player.anims.play('run_shoot_resolver',true);
                         if(player.anims.currentFrame.index == 7
                             && player.anims.currentFrame.index != this.plyer_last_frame_index){
-                            scene.flareGroup.fireFlare(player.x-100, player.y,'left');
+                            scene.flareGroup.fireFlare(player.x-60, player.y,'left');
                             scene.sound.get('gun_shot_sound').play();
                         }
                     }else{
@@ -50,7 +54,7 @@ export class Helper
                         player.anims.play('walk_shoot_resolver', true);
                         if(player.anims.currentFrame.index == 7
                             && player.anims.currentFrame.index != this.plyer_last_frame_index){
-                            scene.flareGroup.fireFlare(player.x-100, player.y,'left');
+                            scene.flareGroup.fireFlare(player.x-60, player.y,'left');
                             scene.sound.get('gun_shot_sound').play();
                         }
                     }else{
@@ -66,7 +70,7 @@ export class Helper
                         player.anims.play('run_shoot_resolver',true);
                         if(player.anims.currentFrame.index == 7
                             && player.anims.currentFrame.index != this.plyer_last_frame_index){
-                            scene.flareGroup.fireFlare(player.x+100, player.y,'right');
+                            scene.flareGroup.fireFlare(player.x+60, player.y,'right');
                             scene.sound.get('gun_shot_sound').play();
                         }
                     }else{
@@ -79,7 +83,7 @@ export class Helper
                         player.anims.play('walk_shoot_resolver', true);
                         if(player.anims.currentFrame.index == 7
                             && player.anims.currentFrame.index != this.plyer_last_frame_index){
-                            scene.flareGroup.fireFlare(player.x+100, player.y,'right');
+                            scene.flareGroup.fireFlare(player.x+60, player.y,'right');
                             scene.sound.get('gun_shot_sound').play();
                         }
                     }else{
@@ -94,10 +98,10 @@ export class Helper
                     if(player.anims.currentFrame.index == 5 
                         && player.anims.currentFrame.index != this.plyer_last_frame_index){
                         if(player.flipX==false){
-                            scene.flareGroup.fireFlare(player.x+100, player.y,'right');
+                            scene.flareGroup.fireFlare(player.x+60, player.y,'right');
                             scene.sound.get('gun_shot_sound').play();
                         }else{
-                            scene.flareGroup.fireFlare(player.x-100, player.y,'left');
+                            scene.flareGroup.fireFlare(player.x-60, player.y,'left');
                             scene.sound.get('gun_shot_sound').play();
                         }
                     }
@@ -139,6 +143,7 @@ export class Helper
         enemy.setCollideWorldBounds(true);
         enemy.setImmovable(true);
         enemy.health = 100;
+        enemy.body.setSize(200,550);
         enemy.hitSound = scene.sound.add(hit_sound_key);
         enemy.attackSound = scene.sound.add(attck_sound_key);
         enemy.playerHurtSound = scene.sound.add(player_hit_sound_key);
@@ -208,7 +213,7 @@ class FlareGroup extends Phaser.Physics.Arcade.Group {
 		super(scene.physics.world, scene);
 		this.createMultiple({
 			classType: Flare, 
-			frameQuantity: 300, 
+			frameQuantity: 30, 
 			active: false,
 			visible: false,
 			key: 'flare'

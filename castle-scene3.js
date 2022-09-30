@@ -1,4 +1,4 @@
-import {Helper} from './Helper.js'
+import {PlayerHelper} from './PlayerHelper.js'
 
 export class castleScene3 extends Phaser.Scene {
     constructor(){
@@ -29,12 +29,19 @@ export class castleScene3 extends Phaser.Scene {
                 duration: 3000,
                 repeat: 0,
                 onComplete: function(){
-                    earth_shaking_sound.play();
-                    scene.cameras.main.shake(3000);
-                    scene.physics.add.sprite(2900, -10, 'letter').setScale(0.08).setCollideWorldBounds(true)
-                    .setInteractive().on('pointerdown',function(){
-                        scene.scene.launch('letter-scene2');
-                    },scene);
+                    scene.time.addEvent({
+                        delay: 1000,
+                        callback: ()=>{
+                            earth_shaking_sound.play();
+                            scene.cameras.main.shake(4000);
+                            scene.physics.add.sprite(2900, -10, 'letter').setScale(0.08).setCollideWorldBounds(true)
+                            .setInteractive().on('pointerdown',function(){
+                                scene.scene.launch('letter-scene2');
+                            },scene);
+                        },
+                        callbackScope: this,
+                        loop: false
+                    });
                 }
             },scene)
         },this)
@@ -65,26 +72,18 @@ export class castleScene3 extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, 4518, 100);
         this.physics.world.setBounds(0, 0, 4518,650);
 
-        Helper.createKeys(this);
-        this.player = Helper.createPlayer(this, 600, 400);
+        PlayerHelper.createKeys(this);
+        this.player = PlayerHelper.createPlayer(this, 600, 400);
         this.player.setDepth(2);
 
-        const bat = this.physics.add.sprite(600, 550, 'bat').setScale(0.2).anims.play('fly_mouth_closed');
-        bat.body.setAllowGravity(false);
-        bat.body.setImmovable(true);
-        bat.health = 100;
-        this.physics.add.collider(bat, this.flareGroup, this.hit, null, this);
     }      
-    hit(bat,flare){
-        flare.setVisible(false);
-        bat.health--;
-    } 
+
     update(){
         console.log(this.player.x)
         if(this.background_music.isPaused){
             this.background_music.play({loop:true});
         }
-        Helper.updatePlayer(this,this.player,this.KeyA,this.KeyD,this.KeyW,this.KeyS,this.KeySHIFT,this.KeySPACE);
+        PlayerHelper.updatePlayer(this,this.player,this.KeyA,this.KeyD,this.KeyW,this.KeyS,this.KeySHIFT,this.KeySPACE);
     }
 }
 

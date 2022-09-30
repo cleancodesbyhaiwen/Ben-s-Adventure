@@ -23,6 +23,10 @@ export class loadingScene extends Phaser.Scene{
         this.load.atlas('knight', './assets/general/knight.png','./assets/general/knight.json');
         this.load.audio('knight_whoosh_sound', 'assets/general/knight_whoosh.mp3');
         this.load.audio('hurt_by_knight_sound', 'assets/general/hurt_by_knight.mp3');
+        this.load.audio('flare_hit_spider_sound', 'assets/general/flare_hit_spider.mp3');
+        this.load.audio('bitten_by_spider_sound', 'assets/general/bitten_by_spider.mp3');
+        this.load.audio('spider_attack_sound', 'assets/general/spider_attack.mp3');
+        this.load.atlas('spider', './assets/general/spider.png','./assets/general/spider.json');
         let loadingBar = this.add.graphics({
             fillStyle: {
                 color: 0xffffff
@@ -121,8 +125,21 @@ export class loadingScene extends Phaser.Scene{
             start: 1, end: 5, zeroPad: 2,
             prefix: 'tourch_lit_', suffix: '.png'
         }), frameRate: 10, repeat: -1 });
+        // Spider Animation
+        this.anims.create({ key: 'spider_move', frames: this.anims.generateFrameNames('spider', {
+            start: 0, end: 7, zeroPad: 3,
+            prefix: '__purple_black_widow_move_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+        this.anims.create({ key: 'spider_bite', frames: this.anims.generateFrameNames('spider', {
+            start: 0, end: 6, zeroPad: 3,
+            prefix: '__purple_black_widow_bite_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+        this.anims.create({ key: 'spider_die', frames: this.anims.generateFrameNames('spider', {
+            start: 0, end: 4, zeroPad: 3,
+            prefix: '__purple_black_widow_die_', suffix: '.png'
+        }), frameRate: 10, repeat: 0});
 
-        this.scene.start('castle-scene1');
+        this.scene.start('castle-scene3');
     }
 
 }
