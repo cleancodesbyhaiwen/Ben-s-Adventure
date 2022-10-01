@@ -12,7 +12,7 @@ export class PlayerHelper
         scene.flareGroup = new FlareGroup(scene);
         let player = scene.physics.add.sprite(x,y, 'explorer').setScale(0.3);
         player.flipX = false;
-        player.body.setSize(200,550);
+        player.body.setSize(280,590);
         player.setCollideWorldBounds(true);
         player.anims.play('idle', true);
         player.health = 100;

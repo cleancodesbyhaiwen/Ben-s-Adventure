@@ -17,6 +17,7 @@ export class EnemyHelper
         enemy.playerHurtSound = scene.sound.add(player_hit_sound_key);
         scene.enemy_flare_collider = scene.physics.add.collider(enemy, scene.flareGroup, 
             this.hitByFlare, null, this);
+        enemy.start_attack = false;
         return enemy;
     }
     //////////////////////////////////////////////////////////////////////
@@ -32,7 +33,7 @@ export class EnemyHelper
     //////////////////////////////////////////////////////////////////////
     static updateEnemy(scene, enemy, player, move_sprite_key, attack_sprite_key, die_sprite_key, flipX,
         attack_frame_index, die_frame_index){
-        if(!enemy.died){
+        if(!enemy.died && enemy.start_attack){
             if(player.x+100 < enemy.x){
                 enemy.body.setVelocityX(-60);
             }else if(player.x - 100 > enemy.x){
@@ -45,7 +46,7 @@ export class EnemyHelper
                 enemy.anims.play(move_sprite_key,true)
             }else if(enemy.body.velocity.x < 0){
                 enemy.flipX = !flipX;
-                enemy.anims.play(move_sprite_key,true)
+                enemy.anims.play(move_sprite_key,true);
             }else{
                 if(enemy.anims.currentFrame.index == attack_frame_index
                     && enemy.anims.currentFrame.index != this.enemy_last_frame_index){
@@ -61,6 +62,9 @@ export class EnemyHelper
                 }
                 enemy.anims.play(attack_sprite_key,true);
             }
+        }
+        else if(!enemy.died && !enemy.start_attack){
+            enemy.anims.play('knight_idle',true);
         }
         if(enemy.health <= 0 && !enemy.died){
             scene.physics.world.removeCollider(scene.enemy_flare_collider);

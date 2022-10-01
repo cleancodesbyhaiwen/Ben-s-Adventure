@@ -4,8 +4,24 @@ export class loadingScene extends Phaser.Scene{
             key: "loading"
         })
     }
-
     preload(){
+        // Castle Scene1 Specific
+        this.load.image("background-scene1","./assets/castle-scene1/background.png");
+        this.load.audio('wall_plaque_rotate_sound', 'assets/castle-scene1/wall_plaque_rotate.mp3');
+        this.load.audio('come_up_stairs', 'assets/castle-scene1/come_up_stairs.wav');
+        this.load.image("letter_content1","./assets/castle-scene1/letter_content.png");
+        this.load.image("wall_plaque","./assets/castle-scene1/wall_plaque.png");
+        this.load.audio('who_are_you', 'assets/castle-scene1/who_are_you.wav');
+        this.load.audio('dont_come', 'assets/castle-scene1/dont_come.wav');
+        this.load.audio('alex_is', 'assets/castle-scene1/alex_is.wav');
+        // Castle Scene2 Specific
+        this.load.image("background-scene2","./assets/castle-scene2/background.png");
+        // Castle Scene3 Specific
+        this.load.image("background-scene3","./assets/castle-scene3/background.png");
+        this.load.image("book_green","./assets/castle-scene3/book_green.png");
+        this.load.image("letter_content2","./assets/castle-scene3/letter_content.png");
+        this.load.audio('earth_shaking', 'assets/castle-scene3/earth_shaking.mp3');
+        // General
         this.load.atlas('explorer', './assets/general/explorer.png','./assets/general/explorer.json');
         this.load.atlas('bat', './assets/general/bat.png','./assets/general/bat.json');
         this.load.atlas('fire','./assets/general/fire.png','./assets/general/fire.json')
@@ -39,7 +55,6 @@ export class loadingScene extends Phaser.Scene{
             console.log("Done Loading")
         })
     }
-
     create(){
         // Knight animation
         this.anims.create({ key: 'knight_walk', frames: this.anims.generateFrameNames('knight', {
@@ -57,7 +72,7 @@ export class loadingScene extends Phaser.Scene{
         this.anims.create({ key: 'knight_idle', frames: this.anims.generateFrameNames('knight', {
             start: 0, end: 7, zeroPad: 3,
             prefix: 'knight-rest-left__', suffix: '.png'
-        }), frameRate: 20, repeat: 0 });
+        }), frameRate: 10, repeat: 0 });
         this.anims.create({ key: 'knight_die', frames: this.anims.generateFrameNames('knight', {
             start: 0, end: 14, zeroPad: 3,
             prefix: 'knight-die-facing-left__', suffix: '.png'
@@ -139,7 +154,7 @@ export class loadingScene extends Phaser.Scene{
             prefix: '__purple_black_widow_die_', suffix: '.png'
         }), frameRate: 10, repeat: 0});
 
-        this.scene.start('castle-scene3');
+        this.scene.start('castle-scene1');
     }
 
 }

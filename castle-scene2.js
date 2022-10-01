@@ -8,7 +8,7 @@ export class castleScene2 extends Phaser.Scene {
         })
     }
     preload(){
-        this.load.image("background-scene2","./assets/castle-scene2/background.png");
+        
     }
     create(){
         this.background_music = this.sound.add('background_music');

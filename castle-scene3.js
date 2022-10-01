@@ -7,10 +7,7 @@ export class castleScene3 extends Phaser.Scene {
         })
     }
     preload(){
-        this.load.image("background-scene3","./assets/castle-scene3/background.png");
-        this.load.image("book_green","./assets/castle-scene3/book_green.png");
-        this.load.image("letter_content2","./assets/castle-scene3/letter_content.png");
-        this.load.audio('earth_shaking', 'assets/castle-scene3/earth_shaking.mp3');
+
     }
     create(){
         this.background_music = this.sound.add('background_music');
