@@ -7,36 +7,48 @@ export class EnemyHelper
     ///    Create Enemy
     //////////////////////////////////////////////////////////////////////
     static createEnemy(scene,x,y,sprite_key,hit_sound_key,attck_sound_key, player_hit_sound_key){
-        let enemy = scene.physics.add.sprite(x,y, sprite_key).setScale(0.3);
+        let enemy = scene.physics.add.sprite(x,y, sprite_key).setScale(0.3).setOrigin(0.5,0.5);
         enemy.setCollideWorldBounds(true);
         enemy.setImmovable(true);
         enemy.health = 100;
-        enemy.body.setSize(200,550);
-        enemy.hitSound = scene.sound.add(hit_sound_key);
+        enemy.hitSound = scene.sound.add(hit_sound_key);   
         enemy.attackSound = scene.sound.add(attck_sound_key);
         enemy.playerHurtSound = scene.sound.add(player_hit_sound_key);
         scene.enemy_flare_collider = scene.physics.add.collider(enemy, scene.flareGroup, 
-            this.hitByFlare, null, this);
+            function(enemy,flare){
+                if(enemy.x > flare.x-5){
+                    flare.flipX = true;
+                }else{
+                    flare.flipX = false;
+                }
+                flare.setTexture('flare_hitting')
+                enemy.hitSound.play();
+                if(!flare.counted) enemy.health -= 10;  
+                flare.counted = true;
+                scene.time.addEvent({
+                    delay: 50,
+                    callback: ()=>{
+                        flare.destroy();
+                    },
+                    callbackScope: this,
+                    loop: false
+                });
+            }, null, scene);
         enemy.start_attack = false;
         return enemy;
     }
     //////////////////////////////////////////////////////////////////////
-    ///    Enemy Hit By Flare Callback
-    //////////////////////////////////////////////////////////////////////
-    static hitByFlare(enemy,flare){
-        enemy.hitSound.play();
-        flare.destroy();
-        enemy.health -= 10;  
-    } 
-    //////////////////////////////////////////////////////////////////////
     ///    Update Enemy
     //////////////////////////////////////////////////////////////////////
-    static updateEnemy(scene, enemy, player, move_sprite_key, attack_sprite_key, die_sprite_key, flipX,
-        attack_frame_index, die_frame_index){
+    static updateEnemy(scene, enemy, player, move_sprite_key, attack_sprite_key, die_sprite_key,idle_sprite_key,
+         flipX, attack_frame_index, die_frame_index){
+        enemy.body.setSize(200,enemy.height,true);  // keep height of collision box
         if(!enemy.died && enemy.start_attack){
             if(player.x+100 < enemy.x){
+                enemy.body.offset.x = 300; // Make collision box fit
                 enemy.body.setVelocityX(-60);
             }else if(player.x - 100 > enemy.x){
+                enemy.body.offset.x = 100; // Make collision box fit
                 enemy.body.setVelocityX(60);
             }else{
                 enemy.body.setVelocityX(0);
@@ -64,7 +76,7 @@ export class EnemyHelper
             }
         }
         else if(!enemy.died && !enemy.start_attack){
-            enemy.anims.play('knight_idle',true);
+            enemy.anims.play(idle_sprite_key,true);
         }
         if(enemy.health <= 0 && !enemy.died){
             scene.physics.world.removeCollider(scene.enemy_flare_collider);

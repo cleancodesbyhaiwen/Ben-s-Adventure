@@ -2,7 +2,8 @@ export class DialogHelper{
     constructor(){
 
     }
-    static creatDialog(scene,choice1_text, choice2_text,choice3_text,choice1_sound,choice2_sound,choice3_sound){
+    static creatDialog(scene,choice1_text, choice2_text,choice1_sound,choice2_sound
+        ,choice1_reply_sound,choice2_reply_sound, dialog_name){
       var dialog = scene.rexUI.add.dialog({
         x: 600,
         y: 700,
@@ -24,7 +25,7 @@ export class DialogHelper{
         choices: [
             createLabel(scene, choice1_text),
             createLabel(scene, choice2_text),
-            createLabel(scene, choice3_text)
+            //createLabel(scene, choice3_text)
         ],
         actions: [
             //createLabel(scene, '1'),
@@ -82,40 +83,75 @@ export class DialogHelper{
           repeat: 0, // -1: infinity
           yoyo: false
       });
-
-      dialog
-        .on('button.click', function (button, groupName, index, pointer, event) {
-            dialog.destroy();
-            switch (index){
-                case 0:
-                    scene.sound.add(choice1_sound).play();
-                    break;
-                case 1:
-                    scene.sound.add(choice2_sound).play();
-                    break;
-                case 2:
-                    scene.sound.add(choice3_sound).play();
-                    break;
-            }
-            scene.time.addEvent({
-                delay: 2000,
-                callback: ()=>{
-                    scene.knight.start_attack = true;
-                },
-                callbackScope: this,
-                loop: false
-            },scene);
-        }, scene)
-        .on('button.over', function (button, groupName, index, pointer, event) {
-            button.getElement('background').setStrokeStyle(1, 0xffffff);
-        })
-        .on('button.out', function (button, groupName, index, pointer, event) {
-            button.getElement('background').setStrokeStyle();
-        });
+      if(dialog_name=='dog_dialog'){
+        dialog_action_dog(dialog,scene,choice1_sound,choice2_sound);
+      }else if(dialog_name=='knight_dialog'){
+        dialog_action_knight(dialog,scene,choice1_sound,choice2_sound,choice1_reply_sound,choice2_reply_sound);
+      }
         return dialog;
     }
     
 }
+function dialog_action_dog(dialog,scene,choice1_sound,choice2_sound){
+    dialog
+    .on('button.click', function (button, groupName, index, pointer, event) {
+        dialog.destroy();
+        switch (index){
+            case 0:
+                scene.sound.add(choice1_sound).play();
+                scene.dog.go_away = true
+                break;
+            case 1:
+                scene.sound.add(choice2_sound).play();
+                break;
+        }
+    }, scene)
+    .on('button.over', function (button, groupName, index, pointer, event) {
+        button.getElement('background').setStrokeStyle(1, 0xffffff);
+    })
+    .on('button.out', function (button, groupName, index, pointer, event) {
+        button.getElement('background').setStrokeStyle();
+    });
+}
+function dialog_action_knight(dialog,scene,choice1_sound,choice2_sound,choice1_reply_sound,choice2_reply_sound){
+    dialog
+    .on('button.click', function (button, groupName, index, pointer, event) {
+        dialog.destroy();
+        switch (index){
+            case 0:
+                scene.sound.add(choice1_sound).play();
+                scene.time.addEvent({
+                    delay: 2000,
+                    callback: ()=>{
+                        scene.sound.add(choice1_reply_sound).play();
+                        scene.knight.start_attack = true;
+                    },
+                    callbackScope: this,
+                    loop: false
+                },scene);
+                break;
+            case 1:
+                scene.sound.add(choice2_sound).play();
+                scene.time.addEvent({
+                    delay: 2000,
+                    callback: ()=>{
+                        scene.sound.add(choice2_reply_sound).play();
+                        scene.knight.start_attack = true;
+                    },
+                    callbackScope: this,
+                    loop: false
+                },scene);
+                break;
+        }
+    }, scene)
+    .on('button.over', function (button, groupName, index, pointer, event) {
+        button.getElement('background').setStrokeStyle(1, 0xffffff);
+    })
+    .on('button.out', function (button, groupName, index, pointer, event) {
+        button.getElement('background').setStrokeStyle();
+    });
+}
+
 var createLabel = function (scene, text) {
   return scene.rexUI.add.label({
       width: 40, // Minimum width of round-rectangle
