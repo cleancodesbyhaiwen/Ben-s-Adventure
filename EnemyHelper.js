@@ -6,7 +6,9 @@ export class EnemyHelper
     //////////////////////////////////////////////////////////////////////
     ///    Create Enemy
     //////////////////////////////////////////////////////////////////////
-    static createEnemy(scene,x,y,sprite_key,hit_sound_key,attck_sound_key, player_hit_sound_key){
+    static createEnemy(scene,x,y,sprite_key,hit_sound_key,attck_sound_key, player_hit_sound_key,
+        move_sprite_key, attack_sprite_key,die_sprite_key,idle_sprite_key,isflipX,
+        attack_frame_index,die_frame_index){
         let enemy = scene.physics.add.sprite(x,y, sprite_key).setScale(0.3).setOrigin(0.5,0.5);
         enemy.setCollideWorldBounds(true);
         enemy.setImmovable(true);
@@ -14,6 +16,13 @@ export class EnemyHelper
         enemy.hitSound = scene.sound.add(hit_sound_key);   
         enemy.attackSound = scene.sound.add(attck_sound_key);
         enemy.playerHurtSound = scene.sound.add(player_hit_sound_key);
+        enemy.move_sprite_key = move_sprite_key;
+        enemy.attack_sprite_key = attack_sprite_key;
+        enemy.die_sprite_key = die_sprite_key;
+        enemy.idle_sprite_key = idle_sprite_key;
+        enemy.isflipX = isflipX;
+        enemy.attack_frame_index = attack_frame_index;
+        enemy.die_frame_index = die_frame_index;
         scene.enemy_flare_collider = scene.physics.add.collider(enemy, scene.flareGroup, 
             function(enemy,flare){
                 if(enemy.x > flare.x-5){
@@ -40,8 +49,7 @@ export class EnemyHelper
     //////////////////////////////////////////////////////////////////////
     ///    Update Enemy
     //////////////////////////////////////////////////////////////////////
-    static updateEnemy(scene, enemy, player, move_sprite_key, attack_sprite_key, die_sprite_key,idle_sprite_key,
-         flipX, attack_frame_index, die_frame_index){
+    static updateEnemy(scene, enemy, player){
         enemy.body.setSize(200,enemy.height,true);  // keep height of collision box
         if(!enemy.died && enemy.start_attack){
             if(player.x+100 < enemy.x){
@@ -54,13 +62,13 @@ export class EnemyHelper
                 enemy.body.setVelocityX(0);
             }
             if(enemy.body.velocity.x > 0){
-                enemy.flipX = flipX;
-                enemy.anims.play(move_sprite_key,true)
+                enemy.flipX = enemy.isflipX;
+                enemy.anims.play(enemy.move_sprite_key,true)
             }else if(enemy.body.velocity.x < 0){
-                enemy.flipX = !flipX;
-                enemy.anims.play(move_sprite_key,true);
+                enemy.flipX = !enemy.isflipX;
+                enemy.anims.play(enemy.move_sprite_key,true);
             }else{
-                if(enemy.anims.currentFrame.index == attack_frame_index
+                if(enemy.anims.currentFrame.index == enemy.attack_frame_index
                     && enemy.anims.currentFrame.index != this.enemy_last_frame_index){
                         enemy.attackSound.play();
                         if(Math.abs(enemy.x-player.x)<100){
@@ -72,18 +80,18 @@ export class EnemyHelper
                             enemy.playerHurtSound.play();
                         }
                 }
-                enemy.anims.play(attack_sprite_key,true);
+                enemy.anims.play(enemy.attack_sprite_key,true);
             }
         }
         else if(!enemy.died && !enemy.start_attack){
-            enemy.anims.play(idle_sprite_key,true);
+            enemy.anims.play(enemy.idle_sprite_key,true);
         }
         if(enemy.health <= 0 && !enemy.died){
             scene.physics.world.removeCollider(scene.enemy_flare_collider);
             enemy.died = true;
             enemy.body.setVelocityX(0);
-            enemy.anims.play(die_sprite_key,true).on('animationcomplete', () =>{
-                enemy.anims.pause(enemy.anims.currentAnim.frames[die_frame_index]);
+            enemy.anims.play(enemy.die_sprite_key,true).on('animationcomplete', () =>{
+                enemy.anims.pause(enemy.anims.currentAnim.frames[enemy.die_frame_index]);
             });
         }
         this.enemy_last_frame_index = enemy.anims.currentFrame.index;

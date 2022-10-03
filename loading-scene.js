@@ -49,9 +49,13 @@ export class loadingScene extends Phaser.Scene{
         this.load.audio('is_dead', 'assets/castle-scene1/is_dead.mp3');
         this.load.atlas('dog', './assets/castle-scene1/dog.png','./assets/castle-scene1/dog.json');
         this.load.audio('background_music1', 'assets/castle-scene1/background_music.mp3');
-        this.load.audio('earth_shaking', 'assets/castle-scene1/earth_shaking.mp3');
+        this.load.audio('earth_shaking_sound', 'assets/castle-scene1/earth_shaking.mp3');
         this.load.audio('stay_with', 'assets/castle-scene1/stay_with.wav');
         this.load.audio('go_away', 'assets/castle-scene1/go_away.wav');
+        this.load.image("arrow","./assets/castle-scene1/arrow.png");
+        this.load.audio('arrow_shoot_sound', 'assets/castle-scene1/arrow_shoot.mp3');
+        this.load.audio('arrow_hit_sound', 'assets/castle-scene1/arrow_hit.mp3');
+        this.load.audio('thunder_rain_sound', 'assets/castle-scene1/thunder_rain.wav');
         // Castle Scene2 Specific
         this.load.image("background-scene2","./assets/castle-scene2/background.png");
         this.load.audio('background_music2', 'assets/castle-scene2/background_music.wav');
@@ -79,6 +83,16 @@ export class loadingScene extends Phaser.Scene{
         this.load.atlas('spider', './assets/general/spider.png','./assets/general/spider.json');
         this.load.audio('change_weapon_sound', 'assets/general/change_weapon.wav');
         this.load.audio('door_locked', 'assets/general/door_locked.wav');
+        this.load.image("uzi","./assets/general/uzi.png");
+        this.load.image("revolver","./assets/general/revolver.png");
+        this.load.image("stat_background","./assets/general/stat_background.png");
+        this.load.image("health_bar","./assets/general/health_bar.png");
+        this.load.image("shotgun","./assets/general/shotgun.png");
+        this.load.audio('shotgun_shot_sound', 'assets/general/shotgun_shot.wav');
+        this.load.image("dialog_background","./assets/general/dialog_background.png");
+        this.load.image("restart_button","./assets/general/restart_button.png");
+        this.load.audio('footstep_sound', 'assets/general/footstep.mp3');
+        this.load.audio('player_hurt_sound', 'assets/general/player_hurt.ogg');
     }
     create(){
         // Knight animation
@@ -123,15 +137,15 @@ export class loadingScene extends Phaser.Scene{
             start: 0, end: 5, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_crouch_', suffix: '.png'
         }), frameRate: 20, repeat: 0 });
-        this.anims.create({ key: 'shoot_resolver', frames: this.anims.generateFrameNames('explorer', {
+        this.anims.create({ key: 'shoot_revolver', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 5, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_shoot_revolver_', suffix: '.png'
         }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'run_shoot_resolver', frames: this.anims.generateFrameNames('explorer', {
+        this.anims.create({ key: 'run_shoot_revolver', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 7, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_run_shooting_revolver_', suffix: '.png'
         }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'walk_shoot_resolver', frames: this.anims.generateFrameNames('explorer', {
+        this.anims.create({ key: 'walk_shoot_revolver', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 7, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_walk_shooting_revolver_', suffix: '.png'
         }), frameRate: 10, repeat: 0 });
@@ -154,6 +168,18 @@ export class loadingScene extends Phaser.Scene{
         this.anims.create({ key: 'walk_shoot_uzi', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 7, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_walk_shooting_uzi_', suffix: '.png'
+        }), frameRate: 10, repeat: 0 });
+        this.anims.create({ key: 'shoot_shotgun', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 6, zeroPad: 3,
+            prefix: '__explorer_light_skin_tone_shoot_shotgun_', suffix: '.png'
+        }), frameRate: 10, repeat: 0 });
+        this.anims.create({ key: 'run_shoot_shotgun', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 7, zeroPad: 3,
+            prefix: '__explorer_light_skin_tone_run_shooting_shotgun_', suffix: '.png'
+        }), frameRate: 10, repeat: 0 });
+        this.anims.create({ key: 'walk_shoot_shotgun', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 7, zeroPad: 3,
+            prefix: '__explorer_light_skin_tone_walk_shooting_shotgun_', suffix: '.png'
         }), frameRate: 10, repeat: 0 });
         // Bat animation
         this.anims.create({ key: 'fly_mouth_closed', frames: this.anims.generateFrameNames('bat', {
