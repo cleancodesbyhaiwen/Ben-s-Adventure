@@ -20,6 +20,7 @@ export class PlayerHelper
         scene.player.chosen_weapon = 'revolver';
         scene.player.body.setImmovable(true);
         scene.player.enableInput = true;
+        scene.player.body.setSize(300,650,true);
         scene.cameras.main.startFollow(scene.player, true, 0.08, 0.08);
         scene.cameras.main.setZoom(1);
         scene.input.keyboard.on('keydown-' + 'S', function (event) { 
@@ -40,13 +41,11 @@ export class PlayerHelper
     ///    Update Player
     //////////////////////////////////////////////////////////////////////
     static updatePlayer(scene, player){
-        // Make collision box fit
-        player.body.setSize(player.width,player.height,true);
         // Stat panel
         if(Phaser.Input.Keyboard.JustDown(scene.KeyTAB)){
             scene.stat_background = scene.add.sprite(scene.cameras.main.scrollX+600,400,'stat_background').setScale(1).setDepth(4);
-            scene.health_bar = scene.add.sprite(scene.cameras.main.scrollX+495,585,'health_bar').setOrigin(0).setScale(player.health/113,0.7).setDepth(6);
-            scene.chosen_weapon = scene.add.sprite(scene.cameras.main.scrollX+600,400,player.chosen_weapon).setScale(0.5).setDepth(5);
+            scene.health_bar = scene.add.sprite(scene.cameras.main.scrollX+495,552,'health_bar').setOrigin(0).setScale(player.health/113,0.7).setDepth(6);
+            scene.chosen_weapon = scene.add.sprite(scene.cameras.main.scrollX+600,350,player.chosen_weapon).setScale(0.5).setDepth(5);
             player.enableInput = false;
         }
         if(Phaser.Input.Keyboard.JustUp(scene.KeyTAB)){
@@ -59,17 +58,17 @@ export class PlayerHelper
         if(Phaser.Input.Keyboard.JustDown(scene.KeyONE)){
             scene.sound.add('change_weapon_sound').play();
             player.chosen_weapon = 'revolver';
-            if(scene.chosen_weapon) scene.chosen_weapon.setTexture('revolver');
+            if(scene.KeyTAB.isDown) scene.chosen_weapon.setTexture('revolver');
         }
         if(Phaser.Input.Keyboard.JustDown(scene.KeyTWO)){
             scene.sound.add('change_weapon_sound').play();
             player.chosen_weapon = 'uzi';
-            if(scene.chosen_weapon) scene.chosen_weapon.setTexture('uzi');
+            if(scene.KeyTAB.isDown) scene.chosen_weapon.setTexture('uzi');
         }
         if(Phaser.Input.Keyboard.JustDown(scene.KeyTHREE)){
             scene.sound.add('change_weapon_sound').play();
             player.chosen_weapon = 'shotgun';
-            if(scene.chosen_weapon) scene.chosen_weapon.setTexture('shotgun');
+            if(scene.KeyTAB.isDown) scene.chosen_weapon.setTexture('shotgun');
         }
         // Movement Logic
         if(!player.died && !player.being_hurt && player.enableInput){
@@ -84,13 +83,13 @@ export class PlayerHelper
                             player.anims.play('run_shoot_revolver',true);
                             if(player.anims.currentFrame.index == 7
                                 && player.anims.currentFrame.index != this.plyer_last_frame_index){
-                                scene.flareGroup.fireFlare(player.x-60, player.y-15,'left');
+                                scene.flareGroup.fireFlare(player.x-60, player.y-5,'left');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }else if(player.chosen_weapon=='uzi'){
                             player.anims.play('run_shoot_uzi',true);
                             if(player.anims.currentFrame.index != this.plyer_last_frame_index){
-                                scene.flareGroup.fireFlare(player.x-60, player.y-5,'left');
+                                scene.flareGroup.fireFlare(player.x-100, player.y+5,'left');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }else if(player.chosen_weapon=='shotgun'){
@@ -104,7 +103,7 @@ export class PlayerHelper
                         }
                     }else{
                         player.anims.play('run', true);
-                        if(player.anims.currentFrame.index%2==0 
+                        if(player.anims.currentFrame.index%4==0 
                             &&player.anims.currentFrame.index != this.plyer_last_frame_index){
                             scene.sound.add('footstep_sound').play();
                         }
@@ -116,13 +115,13 @@ export class PlayerHelper
                             player.anims.play('walk_shoot_revolver', true);
                             if(player.anims.currentFrame.index == 6
                                 && player.anims.currentFrame.index != this.plyer_last_frame_index){
-                                scene.flareGroup.fireFlare(player.x-60, player.y-15,'left');
+                                scene.flareGroup.fireFlare(player.x-60, player.y-5,'left');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }else if(player.chosen_weapon=='uzi'){
                             player.anims.play('walk_shoot_uzi', true);
                             if( player.anims.currentFrame.index != this.plyer_last_frame_index){
-                                scene.flareGroup.fireFlare(player.x-60, player.y,'left');
+                                scene.flareGroup.fireFlare(player.x-100, player.y+10,'left');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }else if(player.chosen_weapon=='shotgun'){
@@ -136,7 +135,7 @@ export class PlayerHelper
                         }
                     }else{
                         player.anims.play('walk', true);
-                        if(player.anims.currentFrame.index%2==0 
+                        if(player.anims.currentFrame.index%4==0 
                             &&player.anims.currentFrame.index != this.plyer_last_frame_index){
                             scene.sound.add('footstep_sound').play();
                         }
@@ -154,13 +153,13 @@ export class PlayerHelper
                             player.anims.play('run_shoot_revolver',true);
                             if(player.anims.currentFrame.index == 6
                                 && player.anims.currentFrame.index != this.plyer_last_frame_index){
-                                scene.flareGroup.fireFlare(player.x+60, player.y-15,'right');
+                                scene.flareGroup.fireFlare(player.x+60, player.y-5,'right');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }else if(player.chosen_weapon=='uzi'){
                             player.anims.play('run_shoot_uzi',true);
                             if(player.anims.currentFrame.index != this.plyer_last_frame_index){
-                                scene.flareGroup.fireFlare(player.x+60, player.y-5,'right');
+                                scene.flareGroup.fireFlare(player.x+100, player.y+5,'right');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }else if(player.chosen_weapon=='shotgun'){
@@ -174,7 +173,7 @@ export class PlayerHelper
                         }
                     }else{
                         player.anims.play('run', true);
-                        if(player.anims.currentFrame.index%2==0 
+                        if(player.anims.currentFrame.index%4==0 
                             &&player.anims.currentFrame.index != this.plyer_last_frame_index){
                             scene.sound.add('footstep_sound').play();
                         }
@@ -186,13 +185,13 @@ export class PlayerHelper
                             player.anims.play('walk_shoot_revolver', true);
                             if(player.anims.currentFrame.index == 6
                                 && player.anims.currentFrame.index != this.plyer_last_frame_index){
-                                scene.flareGroup.fireFlare(player.x+60, player.y-15,'right');
+                                scene.flareGroup.fireFlare(player.x+60, player.y-5,'right');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }else if(player.chosen_weapon=='uzi'){
                             player.anims.play('walk_shoot_uzi', true);
                             if( player.anims.currentFrame.index != this.plyer_last_frame_index){
-                                scene.flareGroup.fireFlare(player.x+60, player.y,'right');
+                                scene.flareGroup.fireFlare(player.x+100, player.y+10,'right');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }else if(player.chosen_weapon=='shotgun'){
@@ -206,7 +205,7 @@ export class PlayerHelper
                         }
                     }else{
                         player.anims.play('walk', true);
-                        if(player.anims.currentFrame.index%2==0 
+                        if(player.anims.currentFrame.index%4==0 
                             &&player.anims.currentFrame.index != this.plyer_last_frame_index){
                             scene.sound.add('footstep_sound').play();
                         }
@@ -222,10 +221,10 @@ export class PlayerHelper
                         if(player.anims.currentFrame.index == 5 
                             && player.anims.currentFrame.index != this.plyer_last_frame_index){
                             if(player.flipX==false){
-                                scene.flareGroup.fireFlare(player.x+60, player.y-15,'right');
+                                scene.flareGroup.fireFlare(player.x+60, player.y,'right');
                                 scene.sound.get('gun_shot_sound').play();
                             }else{
-                                scene.flareGroup.fireFlare(player.x-60, player.y-15,'left');
+                                scene.flareGroup.fireFlare(player.x-60, player.y,'left');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }
@@ -234,10 +233,10 @@ export class PlayerHelper
                         if(player.anims.currentFrame.index == 1
                             && player.anims.currentFrame.index != this.plyer_last_frame_index){
                             if(player.flipX==false){
-                                scene.flareGroup.fireFlare(player.x+60, player.y,'right');
+                                scene.flareGroup.fireFlare(player.x+100, player.y+10,'right');
                                 scene.sound.get('gun_shot_sound').play();
                             }else{
-                                scene.flareGroup.fireFlare(player.x-60, player.y,'left');
+                                scene.flareGroup.fireFlare(player.x-100, player.y+10,'left');
                                 scene.sound.get('gun_shot_sound').play();
                             }
                         }

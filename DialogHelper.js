@@ -8,7 +8,7 @@ export class DialogHelper{
         var dialog = scene.rexUI.add.dialog({
             x: x_position,
             y: 750,
-            width: 300,
+            width: 400,
 
             choices: [
                 createLabel(scene, choice1_text),
@@ -70,7 +70,6 @@ function dialog_action_dog(dialog,scene,choice1_sound,choice2_sound){
     dialog
     .on('button.click', function (button, groupName, index, pointer, event) {
         dialog.destroy();
-        scene.input.keyboard.enabled = true;
         this.player.enableInput = true;
         switch (index){
             case 0:
@@ -90,10 +89,10 @@ function dialog_action_dog(dialog,scene,choice1_sound,choice2_sound){
         }
     }, scene)
     .on('button.over', function (button, groupName, index, pointer, event) {
-        button.getElement('background').setStrokeStyle(1, 0xffffff);
+        button.getElement('text').setColor('#e8ebe9');
     })
     .on('button.out', function (button, groupName, index, pointer, event) {
-        button.getElement('background').setStrokeStyle(2,0x000000);
+        button.getElement('text').setColor('0xffffff');
     });
 }
 function dialog_action_knight(dialog,scene,choice1_sound,choice2_sound,choice1_reply_sound,choice2_reply_sound){
@@ -101,7 +100,6 @@ function dialog_action_knight(dialog,scene,choice1_sound,choice2_sound,choice1_r
     dialog
     .on('button.click', function (button, groupName, index, pointer, event) {
         dialog.destroy();
-        scene.input.keyboard.enabled = true;
         this.player.enableInput = true;
         switch (index){
             case 0:
@@ -131,10 +129,10 @@ function dialog_action_knight(dialog,scene,choice1_sound,choice2_sound,choice1_r
         }
     }, scene)
     .on('button.over', function (button, groupName, index, pointer, event) {
-        button.getElement('background').setStrokeStyle(1, 0xffffff);
+        button.getElement('text').setColor('#e8ebe9');
     })
     .on('button.out', function (button, groupName, index, pointer, event) {
-        button.getElement('background').setStrokeStyle();
+        button.getElement('text').setColor('white');
     });
 }
 
@@ -143,18 +141,23 @@ var createLabel = function (scene, text) {
         width: 40, // Minimum width of round-rectangle
         height: 40, // Minimum height of round-rectangle
         
-        background: scene.rexUI.add.roundRectangle(0, 0, 100, 40, 5, 0xffffff, 1)
-        .setStrokeStyle(2,0x000000),
+       // background: scene.rexUI.add.roundRectangle(0, 0, 100, 40, 5, 0xffffff, 1)
+       // .setStrokeStyle(2,0x000000),
+        background: scene.rexUI.add.ninePatch({
+            key: 'background_dialog',
+            columns: [0.25, undefined,0.25],
+            rows: [1, undefined, 1],
+        }),
 
         text: scene.add.text(0, 0, text, {
             fontSize: '18px',
-            color: 'black',
+            color: 'white',
             fontWeight: 'bold',
             fontFamily: 'cursive'
         }),
 
         space: {
-            left: 10,
+            left: 20,
             right: 10,
             top: 10,
             bottom: 10

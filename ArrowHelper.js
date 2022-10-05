@@ -63,7 +63,6 @@ class Arrow extends Phaser.Physics.Arcade.Sprite {
                 scene.sound.add('arrow_hit_sound').play();
             }
         },this);
-
         let x_y_ratio = (scene.player.x-this.x)/(scene.player.y-this.y);
         this.body.setVelocityX(400*x_y_ratio)
         this.body.setVelocityY(400)

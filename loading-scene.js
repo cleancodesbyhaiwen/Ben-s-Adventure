@@ -33,6 +33,31 @@ export class loadingScene extends Phaser.Scene{
             progressBox.destroy();
             loadingText.destroy();
         })
+        // Menu Scene Specific
+        this.load.image("background-menu","./assets/menu-scene/background.png");
+        this.load.audio('background_music_menu', 'assets/menu-scene/background_music.mp3');
+        this.load.image("start_button","./assets/menu-scene/start_button.png");
+        this.load.image("controls_button","./assets/menu-scene/controls_button.png");
+        this.load.image("credits_button","./assets/menu-scene/credits_button.png");
+        this.load.image("controls_panel","./assets/menu-scene/controls_panel.png");
+        this.load.image("credits_panel","./assets/menu-scene/credits_panel.png");
+        // Book scene specific
+        this.load.image("book","./assets/book-scene/book.png");
+        this.load.atlas('page', './assets/book-scene/page.png','./assets/book-scene/page.json');
+        this.load.audio('narrator', 'assets/book-scene/narrator.wav');
+        this.load.audio('narrator2', 'assets/book-scene/narrator2.wav');
+        this.load.image("background-book","./assets/book-scene/background.png");
+        this.load.image("candle","./assets/book-scene/candle.png");
+        // Castle Scene0 Specific
+        this.load.image("background-scene0","./assets/castle-scene0/background.png");
+        this.load.audio('not_suppose', 'assets/castle-scene0/not_suppose.wav');
+        this.load.audio('to_save', 'assets/castle-scene0/to_save.wav');
+        this.load.audio('save_yourself', 'assets/castle-scene0/save_yourself.wav');
+        this.load.audio('my_way', 'assets/castle-scene0/my_way.wav');
+        this.load.audio('lets_see', 'assets/castle-scene0/lets_see.wav');
+        this.load.atlas('skeleton', './assets/castle-scene0/skeleton.png','./assets/castle-scene0/skeleton.json');
+        this.load.audio('crash_bone_sound', 'assets/castle-scene0/crash_bone.wav');
+        this.load.audio('witch_laugh', 'assets/castle-scene0/witch_laugh.wav');
         // Castle Scene1 Specific
         this.load.image("background-scene1","./assets/castle-scene1/background.png");
         this.load.audio('brick_rotate_sound', 'assets/castle-scene1/brick_rotate.mp3');
@@ -56,6 +81,8 @@ export class loadingScene extends Phaser.Scene{
         this.load.audio('arrow_shoot_sound', 'assets/castle-scene1/arrow_shoot.mp3');
         this.load.audio('arrow_hit_sound', 'assets/castle-scene1/arrow_hit.mp3');
         this.load.audio('thunder_rain_sound', 'assets/castle-scene1/thunder_rain.wav');
+        this.load.image("chest_closed","./assets/castle-scene1/chest_closed.png");
+        this.load.image("chest_open","./assets/castle-scene1/chest_open.png");
         // Castle Scene2 Specific
         this.load.image("background-scene2","./assets/castle-scene2/background.png");
         this.load.audio('background_music2', 'assets/castle-scene2/background_music.wav');
@@ -93,8 +120,30 @@ export class loadingScene extends Phaser.Scene{
         this.load.image("restart_button","./assets/general/restart_button.png");
         this.load.audio('footstep_sound', 'assets/general/footstep.mp3');
         this.load.audio('player_hurt_sound', 'assets/general/player_hurt.ogg');
+        this.load.image("close_button","./assets/general/close_button.png");
+        this.load.image("background_dialog","./assets/general/background_dialog.png");
     }
     create(){
+        //Skeleton Animation
+        this.anims.create({ key: 'skeleton_run', frames: this.anims.generateFrameNames('skeleton', {
+            start: 0, end: 15, zeroPad: 3,
+            prefix: '__skeleton_000_run_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+        this.anims.create({ key: 'skeleton_attack', frames: this.anims.generateFrameNames('skeleton', {
+            start: 0, end: 9, zeroPad: 3,
+            prefix: '__skeleton_000_throw-bone_', suffix: '.png'
+        }), frameRate: 15, repeat: -1 });
+        this.anims.create({ key: 'skeleton_die', frames: this.anims.generateFrameNames('skeleton', {
+            start: 0, end: 9, zeroPad: 3,
+            prefix: '__skeleton_000_die_', suffix: '.png'
+        }), frameRate: 10, repeat: 0 });   
+        // Page Animation
+        this.anims.create({ key: 'next_page', frames: this.anims.generateFrameNames('page', {
+            start: 1, end: 12, zeroPad: 2,
+            prefix: 'double_page_animation_', suffix: '.png'
+        }), frameRate: 10, repeat: 0 });  
+
+
         // Knight animation
         this.anims.create({ key: 'knight_walk', frames: this.anims.generateFrameNames('knight', {
             start: 0, end: 15, zeroPad: 3,
@@ -250,7 +299,8 @@ export class loadingScene extends Phaser.Scene{
             prefix: '__brown_lapphund_idle_', suffix: '.png'
         }), frameRate: 10, repeat: -1});
 
-        this.scene.start('castle-scene1');
+        this.scene.start('castle-scene0');
+        //this.scene.start('menu-scene');
     }
 
 }
