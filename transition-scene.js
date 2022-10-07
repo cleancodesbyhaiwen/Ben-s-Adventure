@@ -10,7 +10,7 @@ export class TransitionScene extends Phaser.Scene {
     }
     create(){
         this.time.addEvent({
-            delay: this.duration, //15000
+            delay: this.duration, 
             callback: ()=>{    
                 this.scene.start(this.nextScene)
             },

@@ -26,21 +26,21 @@ export class EnemyHelper
         knight.isflipX = isflipX;
         knight.attack_frame_index = attack_frame_index;
         knight.die_frame_index = die_frame_index;
-        scene.knight_flare_collider = scene.physics.add.collider(knight, scene.flareGroup, 
-            function(knight,flare){
-                if(knight.x > flare.x-5){
-                    flare.flipX = true;
+        scene.knight_bullet_collider = scene.physics.add.collider(knight, scene.bulletGroup, 
+            function(knight,bullet){
+                if(knight.x > bullet.x-5){
+                    bullet.flipX = false;
                 }else{
-                    flare.flipX = false;
+                    bullet.flipX = true;
                 }
-                flare.setTexture('flare_hitting')
+                bullet.setTexture('bullet_hitting')
                 knight.hitSound.play();
-                if(!flare.counted) knight.health -= 10;  
-                flare.counted = true;
+                if(!bullet.counted) knight.health -= 10;  
+                bullet.counted = true;
                 scene.time.addEvent({
                     delay: 50,
                     callback: ()=>{
-                        flare.destroy();
+                        bullet.destroy();
                     },
                     callbackScope: this,
                     loop: false
@@ -52,13 +52,13 @@ export class EnemyHelper
     //////////////////////////////////////////////////////////////////////
     ///    Update Knight
     //////////////////////////////////////////////////////////////////////
-    static updateKnight(scene, knight, player){
+    static updateKnight(scene, knight, bodyContainer, player){
         knight.body.setSize(200,knight.height,true);  // keep height of collision box
         if(!knight.died && knight.start_attack){
-            if(player.x+100 < knight.x){
+            if(bodyContainer.x+100 < knight.x){
                 knight.body.offset.x = 300; // Make collision box fit
                 knight.body.setVelocityX(-60);
-            }else if(player.x - 100 > knight.x){
+            }else if(bodyContainer.x - 100 > knight.x){
                 knight.body.offset.x = 100; // Make collision box fit
                 knight.body.setVelocityX(60);
             }else{
@@ -74,12 +74,8 @@ export class EnemyHelper
                 if(knight.anims.currentFrame.index == knight.attack_frame_index
                     && knight.anims.currentFrame.index != this.knight_last_frame_index){
                         knight.attackSound.play();
-                        if(Math.abs(knight.x-player.x)<100){
+                        if(Math.abs(knight.x-bodyContainer.x)<100){
                             player.health -= 10;
-                            player.being_hurt = true;
-                            player.anims.play('hurt',true).on('animationcomplete', () =>{
-                                player.being_hurt = false;
-                            });
                             knight.playerHurtSound.play();
                         }
                 }
@@ -90,7 +86,7 @@ export class EnemyHelper
             knight.anims.play(knight.idle_sprite_key,true);
         }
         if(knight.health <= 0 && !knight.died){
-            scene.physics.world.removeCollider(scene.knight_flare_collider);
+            scene.physics.world.removeCollider(scene.knight_bullet_collider);
             knight.died = true;
             knight.body.setVelocityX(0);
             knight.anims.play(knight.die_sprite_key,true).on('animationcomplete', () =>{
@@ -102,14 +98,14 @@ export class EnemyHelper
     //////////////////////////////////////////////////////////////////////
     ///    Create Skeleton
     //////////////////////////////////////////////////////////////////////
-    static createSkeleton(scene,player,x,y,i){
+    static createSkeleton(scene, player,x,y){
         let skeleton = scene.physics.add.sprite(x,y, 'skeleton').setScale(0.3);
         if(player.x>x) skeleton.flipX = true;
         else skeleton.flipX = false;
         skeleton.setCollideWorldBounds(true);
         skeleton.setImmovable(true);
         skeleton.body.setSize(100,skeleton.height,true); 
-        skeleton.health = 10;
+        skeleton.health = 100;
         skeleton.hitSound = scene.sound.add('crash_bone_sound');   
         skeleton.attackSound = scene.sound.add('crash_bone_sound');
         skeleton.playerHurtSound = scene.sound.add('crash_bone_sound');
@@ -121,22 +117,22 @@ export class EnemyHelper
         skeleton.attack_frame_index = 5;
         skeleton.die_frame_index = 9;
         skeleton.last_frame_index = 0;
-        scene.skeleton_flare_collider = []
-        scene.skeleton_flare_collider[i] = scene.physics.add.collider(skeleton, scene.flareGroup, 
-            function(skeleton,flare){
-                if(skeleton.x > flare.x-5){
-                    flare.flipX = true;
+        scene.skeleton_bullet_collider = []
+        scene.skeleton_bullet_collider = scene.physics.add.collider(skeleton, scene.bulletGroup, 
+            function(skeleton,bullet){
+                if(skeleton.x > bullet.x-5){
+                    bullet.flipX = false;
                 }else{
-                    flare.flipX = false;
+                    bullet.flipX = true;
                 }
-                flare.setTexture('flare_hitting')
+                bullet.setTexture('bullet_hitting')
                 skeleton.hitSound.play();
-                if(!flare.counted) skeleton.health -= 10;  
-                flare.counted = true;
+                if(!bullet.counted) skeleton.health -= 10;  
+                bullet.counted = true;
                 scene.time.addEvent({
                     delay: 50,
                     callback: ()=>{
-                        flare.destroy();
+                        bullet.destroy();
                     },
                     callbackScope: this,
                     loop: false
@@ -147,11 +143,11 @@ export class EnemyHelper
     //////////////////////////////////////////////////////////////////////
     ///    Update Skeleton
     //////////////////////////////////////////////////////////////////////
-    static updateSkeleton(scene, skeleton, player,i){
+    static updateSkeleton(scene, skeleton, player, bodyContainer){
         if(!skeleton.died){
-            if(player.x+100 < skeleton.x){
+            if(bodyContainer.x+100 < skeleton.x){
                 skeleton.body.setVelocityX(-60);
-            }else if(player.x - 100 > skeleton.x){
+            }else if(bodyContainer.x - 100 > skeleton.x){
                 skeleton.body.setVelocityX(60);
             }else{
                 skeleton.body.setVelocityX(0);
@@ -166,12 +162,8 @@ export class EnemyHelper
                 if(skeleton.anims.currentFrame.index == skeleton.attack_frame_index
                     && skeleton.anims.currentFrame.index != skeleton.last_frame_index ){
                         skeleton.attackSound.play();
-                        if(Math.abs(skeleton.x-player.x)<100){
+                        if(Math.abs(skeleton.x-bodyContainer.x)<100){
                             player.health -= 10;
-                            player.being_hurt = true;
-                            player.anims.play('hurt',true).on('animationcomplete', () =>{
-                                player.being_hurt = false;
-                            });
                             skeleton.playerHurtSound.play();
                         }
                 }
@@ -183,8 +175,7 @@ export class EnemyHelper
         }
         if(skeleton.health <= 0  && !skeleton.died){
             skeleton.body.setSize(10,10,true)
-
-            scene.physics.world.removeCollider(scene.skeleton_flare_collider[i]);
+            //scene.physics.world.removeCollider(scene.skeleton_flare_collider);
             skeleton.died = true;
             skeleton.body.setVelocityX(0);
             skeleton.anims.play(skeleton.die_sprite_key,true).on('animationcomplete', () =>{

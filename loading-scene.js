@@ -97,14 +97,14 @@ export class loadingScene extends Phaser.Scene{
         this.load.audio('door_open_sound', 'assets/general/door_open.mp3');
         this.load.audio('gun_shot_sound', 'assets/general/gun_shot.mp3');
         this.load.audio('bat_squeak_sound', 'assets/general/bat_squeak.mp3');
-        this.load.audio('flare_hit_knight_sound', 'assets/general/flare_hit_knight.mp3');
-        this.load.image("flare","./assets/general/flare.png");
-        this.load.image("flare_hitting","./assets/general/flare_hitting.png");
+        this.load.audio('bullet_hit_knight_sound', 'assets/general/bullet_hit_knight.mp3');
+        this.load.image("bullet","./assets/general/bullet.png");
+        this.load.image("bullet_hitting","./assets/general/bullet_hitting.png");
         this.load.image("letter","./assets/general/letter.png");
         this.load.atlas('knight', './assets/general/knight.png','./assets/general/knight.json');
         this.load.audio('knight_whoosh_sound', 'assets/general/knight_whoosh.mp3');
         this.load.audio('hurt_by_knight_sound', 'assets/general/hurt_by_knight.mp3');
-        this.load.audio('flare_hit_spider_sound', 'assets/general/flare_hit_spider.mp3');
+        this.load.audio('bullet_hit_spider_sound', 'assets/general/bullet_hit_spider.mp3');
         this.load.audio('bitten_by_spider_sound', 'assets/general/bitten_by_spider.mp3');
         this.load.audio('spider_attack_sound', 'assets/general/spider_attack.mp3');
         this.load.atlas('spider', './assets/general/spider.png','./assets/general/spider.json');
@@ -113,17 +113,32 @@ export class loadingScene extends Phaser.Scene{
         this.load.image("uzi","./assets/general/uzi.png");
         this.load.image("revolver","./assets/general/revolver.png");
         this.load.image("stat_background","./assets/general/stat_background.png");
-        this.load.image("health_bar","./assets/general/health_bar.png");
         this.load.image("shotgun","./assets/general/shotgun.png");
         this.load.audio('shotgun_shot_sound', 'assets/general/shotgun_shot.wav');
-        this.load.image("dialog_background","./assets/general/dialog_background.png");
         this.load.image("restart_button","./assets/general/restart_button.png");
         this.load.audio('footstep_sound', 'assets/general/footstep.mp3');
         this.load.audio('player_hurt_sound', 'assets/general/player_hurt.ogg');
-        this.load.image("close_button","./assets/general/close_button.png");
+        this.load.image("close_button","./assets/general/close_button.png");    
         this.load.image("background_dialog","./assets/general/background_dialog.png");
+        this.load.atlas('arm_revolver', './assets/general/arm_revolver.png','./assets/general/arm_revolver.json');
+        this.load.atlas('arm_uzi', './assets/general/arm_uzi.png','./assets/general/arm_uzi.json');
+        this.load.image('arm_shotgun', './assets/general/arm_shotgun.png');
+        this.load.audio('uzi_shot_sound', 'assets/general/uzi_shot.mp3');
+        this.load.image('sniper', './assets/general/sniper.png');
+        this.load.image('ak', './assets/general/ak.png');
+        this.load.image('bazooka', './assets/general/bazooka.png');
+        this.load.audio('bazooka_shot_sound', 'assets/general/bazooka_shot.mp3');
+        this.load.audio('sniper_shot_sound', 'assets/general/sniper_shot.mp3');
+        this.load.audio('ak_shot_sound', 'assets/general/ak_shot.mp3');
+        this.load.image("health_bar","./assets/general/health_bar.png");
+        this.load.image("health_bar_base","./assets/general/health_bar_base.png");
+        this.load.image("health_bar_icon","./assets/general/health_bar_icon.png");
     }
     create(){
+        this.anims.create({ key: 'arm_uzi_anims', frames: this.anims.generateFrameNames('arm_uzi', {
+            start: 0, end:9, zeroPad: 3,
+            prefix: 'arm_uzi_', suffix: '.png'
+        }), frameRate: 40, repeat: -1 });
         //Skeleton Animation
         this.anims.create({ key: 'skeleton_run', frames: this.anims.generateFrameNames('skeleton', {
             start: 0, end: 15, zeroPad: 3,
@@ -178,26 +193,7 @@ export class loadingScene extends Phaser.Scene{
             start: 0, end: 7, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_run_', suffix: '.png'
         }), frameRate: 10, repeat: -1 });        
-        this.anims.create({ key: 'jump', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 9, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_jump_', suffix: '.png'
-        }), frameRate: 20, repeat: 0 });
-        this.anims.create({ key: 'crouch', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 5, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_crouch_', suffix: '.png'
-        }), frameRate: 20, repeat: 0 });
-        this.anims.create({ key: 'shoot_revolver', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 5, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_shoot_revolver_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'run_shoot_revolver', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 7, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_run_shooting_revolver_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'walk_shoot_revolver', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 7, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_walk_shooting_revolver_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
+
         this.anims.create({ key: 'die', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 4, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_die_', suffix: '.png'
@@ -206,30 +202,45 @@ export class loadingScene extends Phaser.Scene{
             start: 0, end: 4, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_hurt_', suffix: '.png'
         }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'shoot_uzi', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 1, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_shoot_uzi_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'run_shoot_uzi', frames: this.anims.generateFrameNames('explorer', {
+
+        this.anims.create({ key: 'idle_without_arm', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 19, zeroPad: 3,
+            prefix: 'idle_without_arm_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+        this.anims.create({ key: 'walk_without_arm', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 7, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_run_shooting_uzi_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'walk_shoot_uzi', frames: this.anims.generateFrameNames('explorer', {
+            prefix: 'walk_without_arm_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+        this.anims.create({ key: 'run_without_arm', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 7, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_walk_shooting_uzi_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'shoot_shotgun', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 6, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_shoot_shotgun_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'run_shoot_shotgun', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 7, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_run_shooting_shotgun_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
-        this.anims.create({ key: 'walk_shoot_shotgun', frames: this.anims.generateFrameNames('explorer', {
-            start: 0, end: 7, zeroPad: 3,
-            prefix: '__explorer_light_skin_tone_walk_shooting_shotgun_', suffix: '.png'
-        }), frameRate: 10, repeat: 0 });
+            prefix: 'run_without_arm_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+
+        this.anims.create({ key: 'arm_uzi', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 0, zeroPad: 3,
+            prefix: 'arm_uzi_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+        this.anims.create({ key: 'arm_shotgun', frames: this.anims.generateFrameNames('explorer', {
+            start: 2, end: 2, zeroPad: 3,
+            prefix: 'arm_shotgun_', suffix: '.png'
+        }), frameRate: 10, repeat: 1 });
+        this.anims.create({ key: 'arm_revolver', frames: this.anims.generateFrameNames('explorer', {
+            start: 1, end: 1, zeroPad: 3,
+            prefix: 'arm_revolver_', suffix: '.png'
+        }), frameRate: 10, repeat: 1 });
+        this.anims.create({ key: 'arm_ak', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 0, zeroPad: 3,
+            prefix: 'arm_ak_', suffix: '.png'
+        }), frameRate: 10, repeat: 1 });
+        this.anims.create({ key: 'arm_bazooka', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 0, zeroPad: 3,
+            prefix: 'arm_bazooka_', suffix: '.png'
+        }), frameRate: 10, repeat: 1 });
+        this.anims.create({ key: 'arm_sniper', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 0, zeroPad: 3,
+            prefix: 'arm_sniper_', suffix: '.png'
+        }), frameRate: 10, repeat: 1 });
+
         // Bat animation
         this.anims.create({ key: 'fly_mouth_closed', frames: this.anims.generateFrameNames('bat', {
             start: 0, end: 7, zeroPad: 3,

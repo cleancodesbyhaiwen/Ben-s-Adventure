@@ -13,10 +13,14 @@ const config = {
     width: 1200,
     height: 800,
     autoCenter: true,
+    //scale: {
+    //    parent: 'rgame-div',
+    //    mode: Phaser.Scale.FIT,
+    //},
     physics: {
         default: 'arcade',
         arcade: {                         
-            //debug:true,
+            debug:true,
             gravity: {y:1000}
         }
     },

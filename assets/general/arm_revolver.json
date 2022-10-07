@@ -1,0 +1,45 @@
+{
+	"textures": [
+		{
+			"image": "arm_revolver.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1290,
+				"h": 399
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "arm_revolver_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1314,
+						"h": 427
+					},
+					"spriteSourceSize": {
+						"x": 22,
+						"y": 8,
+						"w": 1288,
+						"h": 397
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1288,
+						"h": 397
+					},
+					"anchor": {
+						"x": 0.0281583,
+						"y": 0.5058548
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:eb9657eafb1fa05f2f66e377103f1bf9:8bdc5cc2c049b9e9c0d57f48c4750c27:736ff6ae186ebffb555e728131acd962$"
+	}
+}

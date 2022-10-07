@@ -20,6 +20,9 @@ export class castleScene1 extends Phaser.Scene {
         const earth_shaking = this.sound.add('earth_shaking_sound');
         this.background = this.add.tileSprite(1690,400,3381,800,'background-scene1')
         .setScale(1.01).setDepth(-2);
+        this.background_music = this.sound.add('background_music1');
+        this.background_music.play({loop:true}); 
+        
         
         // Initialize Map
         this.add.image(350,330,'map').setScale(0.25).setInteractive()
@@ -134,9 +137,8 @@ export class castleScene1 extends Phaser.Scene {
             
     }
     update(){
-        console.log(this.player.x)
         // Update Player and Enemy
-        PlayerHelper.updatePlayer(this, this.player);
+        PlayerHelper.updatePlayer(this, this.player, this.playerBody, this.playerArm, this.bodyContainer);
     }
 }
 

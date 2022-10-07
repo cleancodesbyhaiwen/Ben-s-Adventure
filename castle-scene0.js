@@ -51,17 +51,17 @@ export class castleScene0 extends Phaser.Scene {
 
         // Initialize arrows
         this.arrowGroup = new ArrowGroup(this);
-        this.arrowGroup.createCollider(this, this.player);     
+        this.arrowGroup.createCollider(this, this.bodyContainer);     
         
-
-        //this.skeleton1 = EnemyHelper.createSkeleton(this,this.player, 1000,310,2); 
-        //this.skeleton2 = EnemyHelper.createSkeleton(this,this.player, 1300,310,1); 
-        //this.skeleton3 = EnemyHelper.createSkeleton(this,this.player, 1200,310); 
-        //this.skeleton4 = EnemyHelper.createSkeleton(this,this.player, 1100,310); 
+/*
+        this.skeleton1 = EnemyHelper.createSkeleton(this,this.player, 1000,310); 
+        this.skeleton2 = EnemyHelper.createSkeleton(this,this.player, 1300,310); 
+        this.skeleton3 = EnemyHelper.createSkeleton(this,this.player, 1200,310); 
+        this.skeleton4 = EnemyHelper.createSkeleton(this,this.player, 1100,310); */
 
         // Initialize Knight
         this.knight = EnemyHelper.createKnight(this,this.player, 1000,610,'knight',
-        'flare_hit_knight_sound','knight_whoosh_sound','hurt_by_knight_sound', 
+        'bullet_hit_knight_sound','knight_whoosh_sound','hurt_by_knight_sound', 
         'knight_walk','knight_attack','knight_die','knight_idle',true,11,15); 
         this.time.addEvent({
             delay: 3000, 
@@ -87,18 +87,19 @@ export class castleScene0 extends Phaser.Scene {
         
     }
     update(){
-        if(this.player.x > 3100){
+        if(this.bodyContainer.x > 3100){
             this.background_music.pause();
             this.scene.start('transition-scene', {nextScene: 'castle-scene1', duration: 3000});
         }
         // Update Player and Enemy
-        PlayerHelper.updatePlayer(this, this.player);
-        EnemyHelper.updateKnight(this, this.knight, this.player);
-        //EnemyHelper.updateSkeleton(this, this.skeleton1, this.player,2)
-        //EnemyHelper.updateSkeleton(this, this.skeleton2, this.player,1)
-        //EnemyHelper.updateSkeleton(this, this.skeleton3, this.player)
-        //EnemyHelper.updateSkeleton(this, this.skeleton4, this.player)
-        if(this.player.x > 1000 && !this.arrowAdded){
+        PlayerHelper.updatePlayer(this, this.player, this.playerBody, this.playerArm, this.bodyContainer);
+        EnemyHelper.updateKnight(this, this.knight, this.bodyContainer, this.player);
+
+        /*EnemyHelper.updateSkeleton(this, this.skeleton1, this.player, this.bodyContainer)
+        EnemyHelper.updateSkeleton(this, this.skeleton2, this.player, this.bodyContainer)
+        EnemyHelper.updateSkeleton(this, this.skeleton3, this.player, this.bodyContainer)
+        EnemyHelper.updateSkeleton(this, this.skeleton4, this.player, this.bodyContainer)*/
+        if(this.bodyContainer.x > 1000 && !this.arrowAdded){
             this.arrowAdded = true
             this.time.addEvent({
                 delay: 1000, 

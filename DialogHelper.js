@@ -56,47 +56,14 @@ export class DialogHelper{
             repeat: 0, // -1: infinity
             yoyo: false
         });
-        if(dialog_name=='dog_dialog'){
-            dialog_action_dog(dialog,scene,choice1_sound,choice2_sound);
-        }else if(dialog_name=='knight_dialog'){
+        if(dialog_name=='knight_dialog'){
             dialog_action_knight(dialog,scene,choice1_sound,choice2_sound,choice1_reply_sound,choice2_reply_sound);
         }
         return dialog;
     }
     
 }
-function dialog_action_dog(dialog,scene,choice1_sound,choice2_sound){
-    
-    dialog
-    .on('button.click', function (button, groupName, index, pointer, event) {
-        dialog.destroy();
-        this.player.enableInput = true;
-        switch (index){
-            case 0:
-                scene.sound.add(choice1_sound).play();
-                scene.time.addEvent({
-                    delay: 2000,
-                    callback: ()=>{
-                        scene.dog.go_away = true
-                    },
-                    callbackScope: this,
-                    loop: false
-                },scene);
-                break;
-            case 1:
-                scene.sound.add(choice2_sound).play();
-                break;
-        }
-    }, scene)
-    .on('button.over', function (button, groupName, index, pointer, event) {
-        button.getElement('text').setColor('#e8ebe9');
-    })
-    .on('button.out', function (button, groupName, index, pointer, event) {
-        button.getElement('text').setColor('0xffffff');
-    });
-}
 function dialog_action_knight(dialog,scene,choice1_sound,choice2_sound,choice1_reply_sound,choice2_reply_sound){
-    scene.input.keyboard.enabled = true;
     dialog
     .on('button.click', function (button, groupName, index, pointer, event) {
         dialog.destroy();
@@ -140,7 +107,6 @@ var createLabel = function (scene, text) {
     return scene.rexUI.add.label({
         width: 40, // Minimum width of round-rectangle
         height: 40, // Minimum height of round-rectangle
-        
        // background: scene.rexUI.add.roundRectangle(0, 0, 100, 40, 5, 0xffffff, 1)
        // .setStrokeStyle(2,0x000000),
         background: scene.rexUI.add.ninePatch({

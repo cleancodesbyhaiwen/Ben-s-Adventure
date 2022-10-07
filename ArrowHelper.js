@@ -19,16 +19,12 @@ export class ArrowGroup extends Phaser.Physics.Arcade.Group {
 			arrow.shoot(x, y, scene);
 		}              
 	}
-    createCollider(scene, player){
-        scene.arrowCollider = scene.physics.add.collider(player, this, 
+    createCollider(scene, bodyContainer){
+        scene.arrowCollider = scene.physics.add.collider(bodyContainer, this, 
             function(player,arrow){
                 console.log('hit player')
-                player.health -= 10;
-                player.being_hurt = true;
+                scene.player.health -= 10;
                 scene.sound.add('player_hurt_sound').play();
-                player.anims.play('hurt',true).on('animationcomplete', () =>{
-                    player.being_hurt = false;
-                });
                 arrow.destroy();
             }, null, scene);
     }
@@ -63,11 +59,11 @@ class Arrow extends Phaser.Physics.Arcade.Sprite {
                 scene.sound.add('arrow_hit_sound').play();
             }
         },this);
-        let x_y_ratio = (scene.player.x-this.x)/(scene.player.y-this.y);
+        let x_y_ratio = (scene.bodyContainer.x-this.x)/(scene.bodyContainer.y-this.y);
         this.body.setVelocityX(400*x_y_ratio)
         this.body.setVelocityY(400)
         this.setRotation(Phaser.Math.Angle.Between(this.x, 
-            this.y, scene.player.x, scene.player.y))
+            this.y, scene.bodyContainer.x, scene.bodyContainer.y))
 	}
     preUpdate(time, delta) {
 		super.preUpdate(time, delta);
