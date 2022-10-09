@@ -48,6 +48,14 @@ export class loadingScene extends Phaser.Scene{
         this.load.audio('narrator2', 'assets/book-scene/narrator2.wav');
         this.load.image("background-book","./assets/book-scene/background.png");
         this.load.image("candle","./assets/book-scene/candle.png");
+        //Plane scene specific
+        this.load.image("background-plane","./assets/plane-scene/background.png");
+        this.load.image("plane","./assets/plane-scene/plane.png");
+        this.load.audio('wind_sound', 'assets/plane-scene/wind.mp3');
+        // Entrance scene specific
+        this.load.image("background-entrance","./assets/entrance-scene/background.png");
+        this.load.image("bridge","./assets/entrance-scene/bridge.png");
+        this.load.image("parachute","./assets/entrance-scene/parachute.png");
         // Castle Scene0 Specific
         this.load.image("background-scene0","./assets/castle-scene0/background.png");
         this.load.audio('not_suppose', 'assets/castle-scene0/not_suppose.wav');
@@ -94,6 +102,7 @@ export class loadingScene extends Phaser.Scene{
         this.load.image("door_closed","./assets/general/door_closed.png");
         this.load.image("door_open_down","./assets/general/door_open_down.png");
         this.load.image("door_open_up","./assets/general/door_open_up.png");
+        this.load.image("door_open","./assets/general/door_open.png");
         this.load.audio('door_open_sound', 'assets/general/door_open.mp3');
         this.load.audio('gun_shot_sound', 'assets/general/gun_shot.mp3');
         this.load.audio('bat_squeak_sound', 'assets/general/bat_squeak.mp3');
@@ -158,7 +167,6 @@ export class loadingScene extends Phaser.Scene{
             prefix: 'double_page_animation_', suffix: '.png'
         }), frameRate: 10, repeat: 0 });  
 
-
         // Knight animation
         this.anims.create({ key: 'knight_walk', frames: this.anims.generateFrameNames('knight', {
             start: 0, end: 15, zeroPad: 3,
@@ -181,6 +189,10 @@ export class loadingScene extends Phaser.Scene{
             prefix: 'knight-die-facing-left__', suffix: '.png'
         }), frameRate: 20, repeat: 0 });
         // Explorer animation
+        this.anims.create({ key: 'fall', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 9, zeroPad: 3,
+            prefix: '__explorer_light_skin_tone_falling_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
         this.anims.create({ key: 'idle', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 19, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_idle_', suffix: '.png'
@@ -280,38 +292,8 @@ export class loadingScene extends Phaser.Scene{
             start: 0, end: 19, zeroPad: 3,
             prefix: '__purple_black_widow_idle_', suffix: '.png'
         }), frameRate: 10, repeat: 0});
-        // Dog Animation
-        this.anims.create({ key: 'dog_walk', frames: this.anims.generateFrameNames('dog', {
-            start: 0, end: 14, zeroPad: 2,
-            prefix: '__brown_lapphund_walk_', suffix: '.png'
-        }), frameRate: 10, repeat: -1 });
-        this.anims.create({ key: 'dog_bark', frames: this.anims.generateFrameNames('dog', {
-            start: 0, end: 9, zeroPad: 2,
-            prefix: '__brown_lapphund_bark_', suffix: '.png'
-        }), frameRate: 10, repeat: -1 });
-        this.anims.create({ key: 'dog_run', frames: this.anims.generateFrameNames('dog', {
-            start: 0, end: 14, zeroPad: 2,
-            prefix: '__brown_lapphund_run_', suffix: '.png'
-        }), frameRate: 20, repeat: -1});
-        this.anims.create({ key: 'dog_sitting', frames: this.anims.generateFrameNames('dog', {
-            start: 0, end: 19, zeroPad: 2,
-            prefix: '__brown_lapphund_idle_sitting_', suffix: '.png'
-        }), frameRate: 10, repeat: -1});
-        this.anims.create({ key: 'dog_sit', frames: this.anims.generateFrameNames('dog', {
-            start: 0, end: 4, zeroPad: 2,
-            prefix: '__brown_lapphund_sit_', suffix: '.png'
-        }), frameRate: 10, repeat: 1});
-        this.anims.create({ key: 'dog_stand', frames: this.anims.generateFrameNames('dog', {
-            start: 0, end: 4, zeroPad: 2,
-            prefix: '__brown_lapphund_stand_', suffix: '.png'
-        }), frameRate: 10, repeat: 0});
-        this.anims.create({ key: 'dog_standing', frames: this.anims.generateFrameNames('dog', {
-            start: 0, end: 19, zeroPad: 2,
-            prefix: '__brown_lapphund_idle_', suffix: '.png'
-        }), frameRate: 10, repeat: -1});
-
-        this.scene.start('castle-scene0');
-        //this.scene.start('menu-scene');
+        //this.scene.start('castle-scene0');
+        this.scene.start('entrance-scene');
     }
 
 }

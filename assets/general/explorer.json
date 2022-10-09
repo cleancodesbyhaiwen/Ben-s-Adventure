@@ -4,8 +4,8 @@
 			"image": "explorer.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 3877,
-				"h": 4277
+				"w": 3898,
+				"h": 4914
 			},
 			"scale": 1,
 			"frames": [
@@ -80,8 +80,8 @@
 						"h": 122
 					},
 					"anchor": {
-						"x": 0.052109181141439205,
-						"y": 0.48360655737704916
+						"x": 0.0521091935483871,
+						"y": 0.4836077049180327
 					}
 				},
 				{
@@ -105,8 +105,8 @@
 						"h": 131
 					},
 					"anchor": {
-						"x": 0.06249999982142856,
-						"y": 0.3435114533587786
+						"x": 0.06250037499999998,
+						"y": 0.34351144274809164
 					}
 				},
 				{
@@ -130,8 +130,8 @@
 						"h": 152
 					},
 					"anchor": {
-						"x": 0.038888892722222214,
-						"y": 0.5657894789473685
+						"x": 0.038888970370370375,
+						"y": 0.5657882236842103
 					}
 				},
 				{
@@ -155,8 +155,8 @@
 						"h": 173
 					},
 					"anchor": {
-						"x": 0.1689059500959693,
-						"y": 0.5086705202312138
+						"x": 0.168906,
+						"y": 0.5086703757225433
 					}
 				},
 				{
@@ -2099,8 +2099,8 @@
 						"h": 563
 					},
 					"frame": {
-						"x": 1,
-						"y": 3702,
+						"x": 3608,
+						"y": 3137,
 						"w": 289,
 						"h": 563
 					},
@@ -2124,7 +2124,7 @@
 						"h": 564
 					},
 					"frame": {
-						"x": 292,
+						"x": 1,
 						"y": 3702,
 						"w": 288,
 						"h": 564
@@ -2149,7 +2149,7 @@
 						"h": 564
 					},
 					"frame": {
-						"x": 582,
+						"x": 291,
 						"y": 3702,
 						"w": 288,
 						"h": 564
@@ -2174,7 +2174,7 @@
 						"h": 564
 					},
 					"frame": {
-						"x": 872,
+						"x": 581,
 						"y": 3702,
 						"w": 280,
 						"h": 564
@@ -2199,7 +2199,7 @@
 						"h": 565
 					},
 					"frame": {
-						"x": 1154,
+						"x": 863,
 						"y": 3702,
 						"w": 287,
 						"h": 565
@@ -2224,7 +2224,7 @@
 						"h": 565
 					},
 					"frame": {
-						"x": 1443,
+						"x": 1152,
 						"y": 3702,
 						"w": 287,
 						"h": 565
@@ -2249,7 +2249,7 @@
 						"h": 566
 					},
 					"frame": {
-						"x": 1732,
+						"x": 1441,
 						"y": 3702,
 						"w": 287,
 						"h": 566
@@ -2274,7 +2274,7 @@
 						"h": 566
 					},
 					"frame": {
-						"x": 2021,
+						"x": 1730,
 						"y": 3702,
 						"w": 287,
 						"h": 566
@@ -2299,7 +2299,7 @@
 						"h": 567
 					},
 					"frame": {
-						"x": 2310,
+						"x": 2019,
 						"y": 3702,
 						"w": 286,
 						"h": 567
@@ -2324,7 +2324,7 @@
 						"h": 569
 					},
 					"frame": {
-						"x": 2598,
+						"x": 2307,
 						"y": 3702,
 						"w": 359,
 						"h": 569
@@ -2349,7 +2349,7 @@
 						"h": 573
 					},
 					"frame": {
-						"x": 2959,
+						"x": 2668,
 						"y": 3702,
 						"w": 351,
 						"h": 573
@@ -2374,7 +2374,7 @@
 						"h": 574
 					},
 					"frame": {
-						"x": 3312,
+						"x": 3021,
 						"y": 3702,
 						"w": 273,
 						"h": 574
@@ -2383,6 +2383,256 @@
 						"x": 0.27106227106227104,
 						"y": 0.4146341463414634
 					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_000.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 426,
+						"h": 599
+					},
+					"spriteSourceSize": {
+						"x": 312,
+						"y": 66,
+						"w": 426,
+						"h": 599
+					},
+					"frame": {
+						"x": 3296,
+						"y": 3702,
+						"w": 426,
+						"h": 599
+					},
+					"anchor": {
+						"x": 0.431924882629108,
+						"y": 0.5292153589315526
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_001.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 426,
+						"h": 602
+					},
+					"spriteSourceSize": {
+						"x": 312,
+						"y": 64,
+						"w": 426,
+						"h": 602
+					},
+					"frame": {
+						"x": 1,
+						"y": 4303,
+						"w": 426,
+						"h": 602
+					},
+					"anchor": {
+						"x": 0.431924882629108,
+						"y": 0.5299003322259136
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_009.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 426,
+						"h": 602
+					},
+					"spriteSourceSize": {
+						"x": 312,
+						"y": 64,
+						"w": 426,
+						"h": 602
+					},
+					"frame": {
+						"x": 429,
+						"y": 4303,
+						"w": 426,
+						"h": 602
+					},
+					"anchor": {
+						"x": 0.431924882629108,
+						"y": 0.5299003322259136
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_002.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 424,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 313,
+						"y": 62,
+						"w": 424,
+						"h": 605
+					},
+					"frame": {
+						"x": 857,
+						"y": 4303,
+						"w": 424,
+						"h": 605
+					},
+					"anchor": {
+						"x": 0.43160377358490565,
+						"y": 0.5305785123966942
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_008.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 424,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 313,
+						"y": 62,
+						"w": 424,
+						"h": 605
+					},
+					"frame": {
+						"x": 1283,
+						"y": 4303,
+						"w": 424,
+						"h": 605
+					},
+					"anchor": {
+						"x": 0.43160377358490565,
+						"y": 0.5305785123966942
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_003.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 421,
+						"h": 607
+					},
+					"spriteSourceSize": {
+						"x": 314,
+						"y": 60,
+						"w": 421,
+						"h": 607
+					},
+					"frame": {
+						"x": 1709,
+						"y": 4303,
+						"w": 421,
+						"h": 607
+					},
+					"anchor": {
+						"x": 0.4323040380047506,
+						"y": 0.5321252059308073
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_007.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 421,
+						"h": 607
+					},
+					"spriteSourceSize": {
+						"x": 314,
+						"y": 60,
+						"w": 421,
+						"h": 607
+					},
+					"frame": {
+						"x": 2132,
+						"y": 4303,
+						"w": 421,
+						"h": 607
+					},
+					"anchor": {
+						"x": 0.4323040380047506,
+						"y": 0.5321252059308073
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_004.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 417,
+						"h": 609
+					},
+					"spriteSourceSize": {
+						"x": 315,
+						"y": 58,
+						"w": 417,
+						"h": 609
+					},
+					"frame": {
+						"x": 2555,
+						"y": 4303,
+						"w": 417,
+						"h": 609
+					},
+					"anchor": {
+						"x": 0.434052757793765,
+						"y": 0.5336617405582923
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_006.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 417,
+						"h": 609
+					},
+					"spriteSourceSize": {
+						"x": 315,
+						"y": 58,
+						"w": 417,
+						"h": 609
+					},
+					"frame": {
+						"x": 2974,
+						"y": 4303,
+						"w": 417,
+						"h": 609
+					},
+					"anchor": {
+						"x": 0.434052757793765,
+						"y": 0.5336617405582923
+					}
+				},
+				{
+					"filename": "__explorer_light_skin_tone_falling_005.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 413,
+						"h": 610
+					},
+					"spriteSourceSize": {
+						"x": 316,
+						"y": 56,
+						"w": 413,
+						"h": 610
+					},
+					"frame": {
+						"x": 3393,
+						"y": 4303,
+						"w": 413,
+						"h": 610
+					},
+					"anchor": {
+						"x": 0.4358353510895884,
+						"y": 0.5360655737704918
+					}
 				}
 			]
 		}
@@ -2390,6 +2640,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:3e5731d56b2c600e9e808eed21f97352:f175313efccc275cb08c07c1e07d5650:fee49967244ce28972b288c285b7cab9$"
+		"smartupdate": "$TexturePacker:SmartUpdate:39bf4fc3c6631d2af4e24a31062d0bab:8d5b58cd9f58c3a1b8d07d3c033bc03a:fee49967244ce28972b288c285b7cab9$"
 	}
 }

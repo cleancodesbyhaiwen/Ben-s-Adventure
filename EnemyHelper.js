@@ -7,11 +7,11 @@ export class EnemyHelper
     //////////////////////////////////////////////////////////////////////
     ///    Create Knight
     //////////////////////////////////////////////////////////////////////
-    static createKnight(scene,player,x,y,sprite_key,hit_sound_key,attck_sound_key, player_hit_sound_key,
+    static createKnight(scene,playerContainer,x,y,sprite_key,hit_sound_key,attck_sound_key, player_hit_sound_key,
         move_sprite_key, attack_sprite_key,die_sprite_key,idle_sprite_key,isflipX,
         attack_frame_index,die_frame_index){
         let knight = scene.physics.add.sprite(x,y, sprite_key).setScale(0.3).setOrigin(0.5,0.5);
-        if(player.x>x) knight.flipX = true;
+        if(playerContainer.x>x) knight.flipX = true;
         else knight.flipX = false;
         knight.setCollideWorldBounds(true);
         knight.setImmovable(true);

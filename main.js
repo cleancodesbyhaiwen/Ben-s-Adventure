@@ -2,6 +2,8 @@ import {menuScene} from './menu-scene.js'
 import {bookScene} from './book-scene.js'
 import {loadingScene} from './loading-scene.js'
 import {PopUpScene} from './popup-scene.js'
+import {planeScene} from './plane-scene.js'
+import {entranceScene} from './entrance-scene.js'
 import {castleScene0} from './castle-scene0.js'
 import {castleScene1} from './castle-scene1.js'
 import {castleScene2} from './castle-scene2.js'
@@ -24,7 +26,8 @@ const config = {
             gravity: {y:1000}
         }
     },
-    scene: [loadingScene,TransitionScene,menuScene,bookScene,castleScene0,castleScene1,castleScene2,PopUpScene]
+    scene: [loadingScene,TransitionScene,menuScene,bookScene,planeScene,
+        entranceScene,castleScene0,castleScene1,castleScene2,PopUpScene]
 };
 export const game = new Phaser.Game(config);
 

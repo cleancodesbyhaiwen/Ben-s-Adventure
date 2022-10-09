@@ -59,31 +59,8 @@ export class castleScene0 extends Phaser.Scene {
         this.skeleton3 = EnemyHelper.createSkeleton(this,this.player, 1200,310); 
         this.skeleton4 = EnemyHelper.createSkeleton(this,this.player, 1100,310); */
 
-        // Initialize Knight
-        this.knight = EnemyHelper.createKnight(this,this.player, 1000,610,'knight',
-        'bullet_hit_knight_sound','knight_whoosh_sound','hurt_by_knight_sound', 
-        'knight_walk','knight_attack','knight_die','knight_idle',true,11,15); 
-        this.time.addEvent({
-            delay: 3000, 
-            callback: ()=>{    
-                this.sound.add('not_suppose').play();
-            },
-            callbackScope: this,
-            loop: false
-        },this);
 
-        // Initilize Knight Dialog
-        this.player.enableInput = false;
-        this.time.addEvent({
-            delay: 0, //6000
-            callback: ()=>{ 
-                this.knight_dialog = DialogHelper.creatDialog(this,'Get out of my way, or I\'ll kill you',
-                'I\'m here to save the children','my_way','to_save',
-                'lets_see','save_yourself', 'knight_dialog',this.cameras.main.scrollX+600);
-            },
-            callbackScope: this,
-            loop: false
-        },this);
+
         
     }
     update(){
@@ -93,7 +70,7 @@ export class castleScene0 extends Phaser.Scene {
         }
         // Update Player and Enemy
         PlayerHelper.updatePlayer(this, this.player, this.playerBody, this.playerArm, this.bodyContainer);
-        EnemyHelper.updateKnight(this, this.knight, this.bodyContainer, this.player);
+        //EnemyHelper.updateKnight(this, this.knight, this.bodyContainer, this.player);
 
         /*EnemyHelper.updateSkeleton(this, this.skeleton1, this.player, this.bodyContainer)
         EnemyHelper.updateSkeleton(this, this.skeleton2, this.player, this.bodyContainer)
