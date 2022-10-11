@@ -1,0 +1,272 @@
+{
+	"textures": [
+		{
+			"image": "shark.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 3524,
+				"h": 735
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "__dark_blue_shark_swim_snapping_00.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 608,
+						"h": 363
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 608,
+						"h": 363
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 600,
+						"h": 363
+					},
+					"frame": {
+						"x": 1,
+						"y": 366,
+						"w": 600,
+						"h": 363
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 600,
+						"h": 363
+					},
+					"frame": {
+						"x": 611,
+						"y": 1,
+						"w": 600,
+						"h": 363
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 591,
+						"h": 364
+					},
+					"frame": {
+						"x": 603,
+						"y": 366,
+						"w": 591,
+						"h": 364
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 590,
+						"h": 364
+					},
+					"frame": {
+						"x": 1213,
+						"y": 1,
+						"w": 590,
+						"h": 364
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 581,
+						"h": 365
+					},
+					"frame": {
+						"x": 1805,
+						"y": 1,
+						"w": 581,
+						"h": 365
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_09.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 581,
+						"h": 365
+					},
+					"frame": {
+						"x": 2388,
+						"y": 1,
+						"w": 581,
+						"h": 365
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 571,
+						"h": 366
+					},
+					"frame": {
+						"x": 1196,
+						"y": 368,
+						"w": 571,
+						"h": 366
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_08.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 571,
+						"h": 366
+					},
+					"frame": {
+						"x": 1769,
+						"y": 368,
+						"w": 571,
+						"h": 366
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 562,
+						"h": 365
+					},
+					"frame": {
+						"x": 2342,
+						"y": 368,
+						"w": 562,
+						"h": 365
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 552,
+						"h": 365
+					},
+					"frame": {
+						"x": 2971,
+						"y": 1,
+						"w": 552,
+						"h": 365
+					}
+				},
+				{
+					"filename": "__dark_blue_shark_swim_snapping_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 608,
+						"h": 372
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 562,
+						"h": 365
+					},
+					"frame": {
+						"x": 2906,
+						"y": 368,
+						"w": 562,
+						"h": 365
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:a0b4fb704f33e8cce34c77822a06140a:797d70efcd025a4611adf5096146691e:58f3aff14b3039557d3d690e6ef8fb0d$"
+	}
+}

@@ -1,0 +1,167 @@
+{
+	"textures": [
+		{
+			"image": "splash.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 925,
+				"h": 2506
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "up_splash_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1024,
+						"h": 767
+					},
+					"spriteSourceSize": {
+						"x": 56,
+						"y": 79,
+						"w": 923,
+						"h": 545
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 923,
+						"h": 545
+					}
+				},
+				{
+					"filename": "up_splash_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1024,
+						"h": 767
+					},
+					"spriteSourceSize": {
+						"x": 79,
+						"y": 205,
+						"w": 851,
+						"h": 531
+					},
+					"frame": {
+						"x": 1,
+						"y": 548,
+						"w": 851,
+						"h": 531
+					}
+				},
+				{
+					"filename": "up_splash_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1024,
+						"h": 767
+					},
+					"spriteSourceSize": {
+						"x": 128,
+						"y": 230,
+						"w": 771,
+						"h": 533
+					},
+					"frame": {
+						"x": 1,
+						"y": 1081,
+						"w": 771,
+						"h": 533
+					}
+				},
+				{
+					"filename": "up_splash_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1024,
+						"h": 767
+					},
+					"spriteSourceSize": {
+						"x": 187,
+						"y": 284,
+						"w": 639,
+						"h": 481
+					},
+					"frame": {
+						"x": 1,
+						"y": 1616,
+						"w": 639,
+						"h": 481
+					}
+				},
+				{
+					"filename": "up_splash_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1024,
+						"h": 767
+					},
+					"spriteSourceSize": {
+						"x": 273,
+						"y": 361,
+						"w": 489,
+						"h": 406
+					},
+					"frame": {
+						"x": 1,
+						"y": 2099,
+						"w": 489,
+						"h": 406
+					}
+				},
+				{
+					"filename": "up_splash_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1024,
+						"h": 767
+					},
+					"spriteSourceSize": {
+						"x": 413,
+						"y": 590,
+						"w": 235,
+						"h": 177
+					},
+					"frame": {
+						"x": 642,
+						"y": 1616,
+						"w": 235,
+						"h": 177
+					}
+				},
+				{
+					"filename": "up_splash_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1024,
+						"h": 767
+					},
+					"spriteSourceSize": {
+						"x": 356,
+						"y": 514,
+						"w": 351,
+						"h": 253
+					},
+					"frame": {
+						"x": 492,
+						"y": 2099,
+						"w": 351,
+						"h": 253
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:382cb371c8ba1c0d536879a17d12b545:321369e97e4f4771d587e4d42646b7a1:17912d807795a397b5ccd2ab39a16cd0$"
+	}
+}

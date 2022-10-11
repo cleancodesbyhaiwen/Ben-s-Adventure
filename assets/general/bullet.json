@@ -1,0 +1,62 @@
+{
+	"textures": [
+		{
+			"image": "bullet.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 417,
+				"h": 341
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "missile.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 415,
+						"h": 226
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 415,
+						"h": 226
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 415,
+						"h": 226
+					}
+				},
+				{
+					"filename": "bullet.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 331,
+						"h": 111
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 331,
+						"h": 111
+					},
+					"frame": {
+						"x": 1,
+						"y": 229,
+						"w": 331,
+						"h": 111
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:6a22ddbb48ffe95531e5453a19538d27:4492a37ceff830d820f4d60317a42f39:ce0aeb6b1dd09bd42d31ec6c01e81ef2$"
+	}
+}

@@ -1,7 +1,6 @@
-import {PlayerHelper} from './PlayerHelper.js'
-import {EnemyHelper} from './EnemyHelper.js'
-import {DialogHelper} from './DialogHelper.js'
-import {ArrowGroup} from './ArrowHelper.js'
+import {PlayerHelper} from './helpers/PlayerHelper.js'
+import {DialogHelper} from './helpers/DialogHelper.js'
+import {ArrowGroup} from './helpers/ArrowHelper.js'
 
 export class castleScene1 extends Phaser.Scene {
     constructor(){
@@ -138,7 +137,7 @@ export class castleScene1 extends Phaser.Scene {
     }
     update(){
         // Update Player and Enemy
-        PlayerHelper.updatePlayer(this, this.player, this.playerBody, this.playerArm, this.bodyContainer);
+        PlayerHelper.updatePlayer(this, this.player, this.playerBody, this.playerArm, this.playerContainer);
     }
 }
 

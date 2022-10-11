@@ -53,9 +53,15 @@ export class loadingScene extends Phaser.Scene{
         this.load.image("plane","./assets/plane-scene/plane.png");
         this.load.audio('wind_sound', 'assets/plane-scene/wind.mp3');
         // Entrance scene specific
+        this.load.audio('splash_sound', 'assets/entrance-scene/splash.mp3');
         this.load.image("background-entrance","./assets/entrance-scene/background.png");
         this.load.image("bridge","./assets/entrance-scene/bridge.png");
         this.load.image("parachute","./assets/entrance-scene/parachute.png");
+        this.load.image("left_edge","./assets/entrance-scene/left_edge.png");
+        this.load.image("right_edge","./assets/entrance-scene/right_edge.png");
+        this.load.atlas('water','./assets/entrance-scene/water.png','./assets/entrance-scene/water.json')
+        this.load.atlas('shark','./assets/entrance-scene/shark.png','./assets/entrance-scene/shark.json')
+        this.load.atlas('splash','./assets/entrance-scene/splash.png','./assets/entrance-scene/splash.json')
         // Castle Scene0 Specific
         this.load.image("background-scene0","./assets/castle-scene0/background.png");
         this.load.audio('not_suppose', 'assets/castle-scene0/not_suppose.wav');
@@ -91,10 +97,9 @@ export class loadingScene extends Phaser.Scene{
         this.load.audio('thunder_rain_sound', 'assets/castle-scene1/thunder_rain.wav');
         this.load.image("chest_closed","./assets/castle-scene1/chest_closed.png");
         this.load.image("chest_open","./assets/castle-scene1/chest_open.png");
-        // Castle Scene2 Specific
-        this.load.image("background-scene2","./assets/castle-scene2/background.png");
-        this.load.audio('background_music2', 'assets/castle-scene2/background_music.wav');
         // General
+        this.load.atlas('bullet', './assets/general/bullet.png','./assets/general/bullet.json');
+        this.load.image("bullet_count_icon","./assets/general/bullet_count_icon.png");
         this.load.atlas('explorer', './assets/general/explorer.png','./assets/general/explorer.json');
         this.load.atlas('bat', './assets/general/bat.png','./assets/general/bat.json');
         this.load.atlas('fire','./assets/general/fire.png','./assets/general/fire.json')
@@ -139,11 +144,25 @@ export class loadingScene extends Phaser.Scene{
         this.load.audio('bazooka_shot_sound', 'assets/general/bazooka_shot.mp3');
         this.load.audio('sniper_shot_sound', 'assets/general/sniper_shot.mp3');
         this.load.audio('ak_shot_sound', 'assets/general/ak_shot.mp3');
+        this.load.audio('bazooka_shot_sound', 'assets/general/bazooka_shot.wav');
         this.load.image("health_bar","./assets/general/health_bar.png");
         this.load.image("health_bar_base","./assets/general/health_bar_base.png");
         this.load.image("health_bar_icon","./assets/general/health_bar_icon.png");
     }
     create(){
+        this.anims.create({ key: 'splash_anims', frames: this.anims.generateFrameNames('splash', {
+            start: 1, end:7, zeroPad: 2,
+            prefix: 'up_splash_', suffix: '.png'
+        }), frameRate: 7, repeat: 0 });
+        this.anims.create({ key: 'shark_anims', frames: this.anims.generateFrameNames('shark', {
+            start: 0, end:11, zeroPad: 2,
+            prefix: '__dark_blue_shark_swim_snapping_', suffix: '.png'
+        }), frameRate: 7, repeat: -1 });
+        this.anims.create({ key: 'water_anims', frames: this.anims.generateFrameNames('water', {
+            start: 1, end:3, zeroPad: 1,
+            prefix: 'water', suffix: '.png'
+        }), frameRate: 7, repeat: -1 });
+
         this.anims.create({ key: 'arm_uzi_anims', frames: this.anims.generateFrameNames('arm_uzi', {
             start: 0, end:9, zeroPad: 3,
             prefix: 'arm_uzi_', suffix: '.png'
@@ -293,7 +312,7 @@ export class loadingScene extends Phaser.Scene{
             prefix: '__purple_black_widow_idle_', suffix: '.png'
         }), frameRate: 10, repeat: 0});
         //this.scene.start('castle-scene0');
-        this.scene.start('entrance-scene');
+        this.scene.start('menu-scene');
     }
 
 }

@@ -6,7 +6,6 @@ import {planeScene} from './plane-scene.js'
 import {entranceScene} from './entrance-scene.js'
 import {castleScene0} from './castle-scene0.js'
 import {castleScene1} from './castle-scene1.js'
-import {castleScene2} from './castle-scene2.js'
 import {TransitionScene} from './transition-scene.js'
 
 
@@ -27,7 +26,7 @@ const config = {
         }
     },
     scene: [loadingScene,TransitionScene,menuScene,bookScene,planeScene,
-        entranceScene,castleScene0,castleScene1,castleScene2,PopUpScene]
+        entranceScene,castleScene0,castleScene1,PopUpScene]
 };
 export const game = new Phaser.Game(config);
 
