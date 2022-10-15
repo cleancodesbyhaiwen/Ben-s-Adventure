@@ -53,12 +53,16 @@ export class loadingScene extends Phaser.Scene{
         this.load.image("plane","./assets/plane-scene/plane.png");
         this.load.audio('wind_sound', 'assets/plane-scene/wind.mp3');
         // Entrance scene specific
+        this.load.atlas('larva','./assets/entrance-scene/larva.png','./assets/entrance-scene/larva.json')
+        this.load.image("strike_button","./assets/entrance-scene/strike_button.png");
         this.load.audio('splash_sound', 'assets/entrance-scene/splash.mp3');
+        this.load.audio('shovel_digging_sound', 'assets/entrance-scene/shovel_digging.mp3');
         this.load.image("background-entrance","./assets/entrance-scene/background.png");
         this.load.image("bridge","./assets/entrance-scene/bridge.png");
         this.load.image("parachute","./assets/entrance-scene/parachute.png");
         this.load.image("left_edge","./assets/entrance-scene/left_edge.png");
         this.load.image("right_edge","./assets/entrance-scene/right_edge.png");
+        this.load.atlas('fishes','./assets/entrance-scene/fishes.png','./assets/entrance-scene/fishes.json')
         this.load.atlas('water','./assets/entrance-scene/water.png','./assets/entrance-scene/water.json')
         this.load.atlas('shark','./assets/entrance-scene/shark.png','./assets/entrance-scene/shark.json')
         this.load.atlas('splash','./assets/entrance-scene/splash.png','./assets/entrance-scene/splash.json')
@@ -98,6 +102,13 @@ export class loadingScene extends Phaser.Scene{
         this.load.image("chest_closed","./assets/castle-scene1/chest_closed.png");
         this.load.image("chest_open","./assets/castle-scene1/chest_open.png");
         // General
+        this.load.image("item_larva","./assets/general/item_larva.png");
+        this.load.image("item_fishingpole","./assets/general/item_fishingpole.png");
+        this.load.image("item_key1","./assets/general/item_key1.png");
+        this.load.image("item_key2","./assets/general/item_key2.png");
+        this.load.image("item_back","./assets/general/item_back.png");
+        this.load.image("backpack_panel","./assets/general/backpack_panel.png");
+        this.load.image("backpack_icon","./assets/general/backpack_icon.png");
         this.load.atlas('bullet', './assets/general/bullet.png','./assets/general/bullet.json');
         this.load.image("bullet_count_icon","./assets/general/bullet_count_icon.png");
         this.load.atlas('explorer', './assets/general/explorer.png','./assets/general/explorer.json');
@@ -145,11 +156,32 @@ export class loadingScene extends Phaser.Scene{
         this.load.audio('sniper_shot_sound', 'assets/general/sniper_shot.mp3');
         this.load.audio('ak_shot_sound', 'assets/general/ak_shot.mp3');
         this.load.audio('bazooka_shot_sound', 'assets/general/bazooka_shot.wav');
+        this.load.audio('zipper_sound', 'assets/general/zipper.wav');
         this.load.image("health_bar","./assets/general/health_bar.png");
         this.load.image("health_bar_base","./assets/general/health_bar_base.png");
         this.load.image("health_bar_icon","./assets/general/health_bar_icon.png");
     }
     create(){
+        // Larva 
+        this.anims.create({ key: 'larva_wiggle', frames: this.anims.generateFrameNames('larva', {
+            start: 0, end:19, zeroPad: 3,
+            prefix: '__lava_wiggle_', suffix: '.png'
+        }), frameRate: 7, repeat: -1 });
+        // Fishes
+        this.anims.create({ key: 'sword_fish_anims', frames: this.anims.generateFrameNames('fishes', {
+            start: 0, end:15, zeroPad: 3,
+            prefix: 'sword-fish-swim__', suffix: '.png'
+        }), frameRate: 7, repeat: -1 });
+        this.anims.create({ key: 'puffer_fish_anims', frames: this.anims.generateFrameNames('fishes', {
+            start: 0, end:13, zeroPad: 3,
+            prefix: '__green_puffer_fish_inflated_idle_', suffix: '.png'
+        }), frameRate: 7, repeat: -1 });
+        this.anims.create({ key: 'stone_fish_anims', frames: this.anims.generateFrameNames('fishes', {
+            start: 0, end:9, zeroPad: 3,
+            prefix: '__lion_fish_blue_swim_', suffix: '.png'
+        }), frameRate: 7, repeat: -1 });
+
+        // Splash Shark Water
         this.anims.create({ key: 'splash_anims', frames: this.anims.generateFrameNames('splash', {
             start: 1, end:7, zeroPad: 2,
             prefix: 'up_splash_', suffix: '.png'
@@ -208,6 +240,21 @@ export class loadingScene extends Phaser.Scene{
             prefix: 'knight-die-facing-left__', suffix: '.png'
         }), frameRate: 20, repeat: 0 });
         // Explorer animation
+        this.anims.create({ key: 'striking', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 8, zeroPad: 3,
+            prefix: 'striking_', suffix: '.png'
+        }), frameRate: 5, repeat: 0 });
+
+        this.anims.create({ key: 'digging', frames: this.anims.generateFrameNames('explorer', {
+            start: 0, end: 9, zeroPad: 3,
+            prefix: '__explorer_light_skin_tone_dig_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+
+        this.anims.create({ key: 'fishing', frames: this.anims.generateFrameNames('explorer', {
+            start: 1, end: 19, zeroPad: 3,
+            prefix: 'fishing_', suffix: '.png'
+        }), frameRate: 10, repeat: -1 });
+
         this.anims.create({ key: 'fall', frames: this.anims.generateFrameNames('explorer', {
             start: 0, end: 9, zeroPad: 3,
             prefix: '__explorer_light_skin_tone_falling_', suffix: '.png'
@@ -312,7 +359,7 @@ export class loadingScene extends Phaser.Scene{
             prefix: '__purple_black_widow_idle_', suffix: '.png'
         }), frameRate: 10, repeat: 0});
         //this.scene.start('castle-scene0');
-        this.scene.start('menu-scene');
+        this.scene.start('entrance-scene');
     }
 
 }

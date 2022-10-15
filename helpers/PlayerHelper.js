@@ -47,6 +47,47 @@ export class PlayerHelper
             ,scene.player.weapon.bullet_count,{font: '30px monospace',fill: '#ffffff'}).setScrollFactor(0,0)
         scene.bullet_count_icon = scene.add.sprite(scene.cameras.main.scrollX+1080,70, 'bullet_count_icon')
         .setScale(0.4).setScrollFactor(0,0)
+
+        // Initialize backpack icon
+        scene.add.sprite(scene.cameras.main.scrollX+40,100,'backpack_icon')
+        .setOrigin(0).setDepth(6).setScale(0.2).setScrollFactor(0,0).setInteractive()
+        .on('pointerdown', function(){
+            scene.sound.add('zipper_sound').play();
+            if(scene.backpackContainer==undefined){
+                const background_panel = scene.add.image(0,0,'backpack_panel').setDepth(7);
+                const item_list = []
+                item_list.push(background_panel)
+                for(let i=0;i<scene.player.items.length;i++){
+                    if(i>4){
+                        const item_back = scene.add.image(-310+(i-5)*160, 50,'item_back').setDepth(8)
+                        .setInteractive().on('pointerover',function(){
+                            scene.desciption = scene.add.text(scene.input.x+scene.cameras.main.scrollX, scene.input.y, scene.player.items[i].description,
+                                {font: '30px monospace',fill: '#ffffff'}).setDepth(9)
+                        })
+                        .on('pointerout',function(){scene.desciption.destroy();});
+                        const item = scene.add.image(-310+(i-5)*160,50,scene.player.items[i].image).setDepth(8);
+                        item_list.push(item_back);
+                        item_list.push(item);
+                    }else{
+                        const item_back = scene.add.image(-310+i*160,-150,'item_back').setDepth(8)
+                        .setInteractive().on('pointerover',function(){
+                            scene.desciption = scene.add.text(scene.input.x+scene.cameras.main.scrollX, scene.input.y, scene.player.items[i].description,
+                                {font: '30px monospace',fill: '#ffffff'}).setDepth(9)
+                        })
+                        .on('pointerout',function(){scene.desciption.destroy();});
+                        const item = scene.add.image(-310+i*160,-150,scene.player.items[i].image).setDepth(8);
+                        item_list.push(item_back);
+                        item_list.push(item);
+                    }
+                }
+                scene.backpackContainer = scene.add.container(scene.cameras.main.scrollX+600, 400, item_list)
+                .setDepth(8);
+            }else{
+                scene.backpackContainer.destroy();
+                scene.backpackContainer=undefined;
+            }
+
+        });
         
         // initialize camera
         scene.cameras.main.startFollow(scene.playerContainer, true, 0.08, 0.08);
@@ -61,6 +102,14 @@ export class PlayerHelper
                 scene.playerContainer.body.setVelocity(scene.playerContainer.body.velocity.x, -700);
             }
         });
+
+        scene.input.keyboard.on('keydown-' + 'ESC', function (event) { 
+            scene.add.text(scene.cameras.main.scrollX+520,400,'QUIT',{font: '50px monospace',fill: '#ffffff'})
+            .setInteractive().on('pointerdown',function(){scene.scene.start('menu-scene')})
+            scene.add.text(scene.cameras.main.scrollX+480,470,'CONTINUE',{font: '50px monospace',fill: '#ffffff'})
+            .setInteractive().on('pointerdown', function(){this.destroy();})
+        });
+
     }
     //////////////////////////////////////////////////////////////////////
     ///    Update Player
@@ -224,6 +273,7 @@ export class PlayerHelper
         scene.KeyFIVE = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.FIVE);
         scene.KeySIX = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SIX);
         scene.KeyTAB = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TAB);
+        scene.KeyESC = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
     }
     //////////////////////////////////////////////////////////////////////
     ///    Shoot BUllet
@@ -260,7 +310,16 @@ export class PlayerHelper
         }
     }
 }
-
+//////////////////////////////////////////////////////////////////////
+///    Item Class
+//////////////////////////////////////////////////////////////////////
+export class Item {
+    constructor(name, image, description){
+        this.name = name;
+        this.image = image;
+        this.description = description;
+    }
+}
 //////////////////////////////////////////////////////////////////////
 ///    Weapon Class
 //////////////////////////////////////////////////////////////////////
@@ -298,6 +357,8 @@ class Player {
         this.ak = new Weapon(30, 10, 50, 'ak_shot_sound', 'ak','bullet.png', 150, 45, 80, 5, 80);
         this.bazooka = new Weapon(3, 100, 5, 'bazooka_shot_sound','bazooka','missile.png', 150, 45, 80, 5, 80);
         this.weapon = this.uzi;
+        this.money = 0;
+        this.items = [new Item('key2','item_key2', 'Key for entering the dark \nside of the castle')];
     }
 }
 //////////////////////////////////////////////////////////////////////
