@@ -32,7 +32,7 @@ export class PlayerHelper
         // initilize player object 
         scene.player = new Player();
 
-        // initialize healt bar
+        // initialize health bar
         scene.health_bar_base = scene.add.sprite(scene.cameras.main.scrollX+40,33,'health_bar_base')
         .setOrigin(0).setDepth(6).setScale(0.5).setScrollFactor(0,0);
         scene.health_bar = scene.add.sprite(scene.cameras.main.scrollX+48,40,'health_bar')
@@ -41,54 +41,51 @@ export class PlayerHelper
         .setOrigin(0).setScale(0.5).setDepth(7).setScrollFactor(0,0);
 
         // initialize chosen weapon
-        scene.chosen_weapon = scene.add.sprite(scene.cameras.main.scrollX+950,70, scene.player.weapon.image)
-        .setScale(0.16).setScrollFactor(0,0)
-        scene.bullet_count = scene.add.text(scene.cameras.main.scrollX+1100,55
-            ,scene.player.weapon.bullet_count,{font: '30px monospace',fill: '#ffffff'}).setScrollFactor(0,0)
-        scene.bullet_count_icon = scene.add.sprite(scene.cameras.main.scrollX+1080,70, 'bullet_count_icon')
-        .setScale(0.4).setScrollFactor(0,0)
+        scene.chosen_weapon = scene.add.sprite(scene.cameras.main.scrollX+150,100, scene.player.weapon.image)
+        .setScale(0.16).setOrigin(0).setScrollFactor(0,0);
+        scene.bullet_count = scene.add.text(scene.cameras.main.scrollX+270,150
+            ,scene.player.weapon.bullet_count+'/'+scene.player.weapon.max_bullet_count,
+            {font: '30px monospace',fill: '#ffffff'}).setScrollFactor(0,0)
 
-        // Initialize backpack icon
+        // Initialize backpack            
         scene.add.sprite(scene.cameras.main.scrollX+40,100,'backpack_icon')
         .setOrigin(0).setDepth(6).setScale(0.2).setScrollFactor(0,0).setInteractive()
         .on('pointerdown', function(){
             scene.sound.add('zipper_sound').play();
             if(scene.backpackContainer==undefined){
-                const background_panel = scene.add.image(0,0,'backpack_panel').setDepth(7);
+                const background_panel = scene.add.sprite(0,0,'backpack_panel').setDepth(7);
                 const item_list = []
                 item_list.push(background_panel)
                 for(let i=0;i<scene.player.items.length;i++){
-                    if(i>4){
-                        const item_back = scene.add.image(-310+(i-5)*160, 50,'item_back').setDepth(8)
-                        .setInteractive().on('pointerover',function(){
-                            scene.desciption = scene.add.text(scene.input.x+scene.cameras.main.scrollX, scene.input.y, scene.player.items[i].description,
-                                {font: '30px monospace',fill: '#ffffff'}).setDepth(9)
-                        })
-                        .on('pointerout',function(){scene.desciption.destroy();});
-                        const item = scene.add.image(-310+(i-5)*160,50,scene.player.items[i].image).setDepth(8);
-                        item_list.push(item_back);
-                        item_list.push(item);
-                    }else{
-                        const item_back = scene.add.image(-310+i*160,-150,'item_back').setDepth(8)
-                        .setInteractive().on('pointerover',function(){
-                            scene.desciption = scene.add.text(scene.input.x+scene.cameras.main.scrollX, scene.input.y, scene.player.items[i].description,
-                                {font: '30px monospace',fill: '#ffffff'}).setDepth(9)
-                        })
-                        .on('pointerout',function(){scene.desciption.destroy();});
-                        const item = scene.add.image(-310+i*160,-150,scene.player.items[i].image).setDepth(8);
-                        item_list.push(item_back);
-                        item_list.push(item);
-                    }
+                    const item_back = scene.add.sprite(i%5*160-315, Math.floor(i/5)*170-200,'item_back').setDepth(8)
+                    .setInteractive().on('pointerover',function(){
+                        scene.description_panel = scene.add.image(scene.input.x+scene.cameras.main.scrollX-10,
+                            scene.input.y-10, 'description_panel').setOrigin(0,0).setDepth(9)
+                            .setScale(0.01*scene.player.items[i].max_length,0.04*scene.player.items[i].num_of_line);
+                        scene.desciption = scene.add.text(scene.input.x+scene.cameras.main.scrollX, scene.input.y, 
+                            scene.player.items[i].description+'\nQuantity: '+scene.player.items[i].quantity,
+                            {font: '30px monospace',fill: '#000000'}).setDepth(9);
+                    })
+                    .on('pointerout',function(){scene.desciption.destroy();scene.description_panel.destroy();})
+                    const item = scene.add.image(i%5*160-315,Math.floor(i/5)*170-200,scene.player.items[i].image).setDepth(8);
+                    item_list.push(item_back);
+                    item_list.push(item);
                 }
                 scene.backpackContainer = scene.add.container(scene.cameras.main.scrollX+600, 400, item_list)
                 .setDepth(8);
             }else{
+
                 scene.backpackContainer.destroy();
                 scene.backpackContainer=undefined;
             }
-
         });
         
+        // Initialize message
+        scene.message_panel = scene.add.image(scene.cameras.main.scrollX+20, 700, 'message_panel')
+        .setOrigin(0,0).setScrollFactor(0,0).setVisible(false);
+        scene.message = scene.add.text(scene.cameras.main.scrollX+30,710,'',
+        {font: '30px monospace',fill: '#000000'}).setScrollFactor(0,0);
+
         // initialize camera
         scene.cameras.main.startFollow(scene.playerContainer, true, 0.08, 0.08);
         scene.cameras.main.setZoom(1);
@@ -136,7 +133,7 @@ export class PlayerHelper
         this.shoot_bullet(scene, player, playerArm, playerBody, playerContainer, player.weapon);
         // Update Health and Bullet Count
         scene.health_bar.setScale(player.health/200,0.5);
-        scene.bullet_count.setText(player.weapon.bullet_count)
+        scene.bullet_count.setText(player.weapon.bullet_count+'/'+scene.player.weapon.max_bullet_count)
 
         // TAB Panel 
         if(Phaser.Input.Keyboard.JustDown(scene.KeyTAB)){
@@ -276,6 +273,29 @@ export class PlayerHelper
         scene.KeyESC = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
     }
     //////////////////////////////////////////////////////////////////////
+    ///    Display message
+    //////////////////////////////////////////////////////////////////////
+    static display_message(scene, message, duration){
+        let num_of_line = (message.match(/\n/g) || []).length + 1;
+        const array = message.split("\n");
+        let max_length = 0;
+        for(let i=0;i<array.length;i++){
+            max_length = Math.max(max_length, array[i].length);
+        }
+        scene.message_panel.setVisible(true);
+        scene.message_panel.setScale(0.04*max_length,0.3*num_of_line).setDepth(8);
+        scene.message.setText(message).setDepth(8);
+        scene.time.addEvent({
+            delay: duration,
+            callback: ()=>{  
+                scene.message.setText('');
+                scene.message_panel.setVisible(false);
+            },
+            callbackScope: scene,
+            loop: false
+        });
+    }
+    //////////////////////////////////////////////////////////////////////
     ///    Shoot BUllet
     //////////////////////////////////////////////////////////////////////
     static shoot_bullet(scene, player, playerArm, playerBody, playerContainer,weapon){
@@ -318,6 +338,17 @@ export class Item {
         this.name = name;
         this.image = image;
         this.description = description;
+        this.quantity = 10;
+        this.num_of_line = (description.match(/\n/g) || []).length + 2;
+        this.max_length = this.find_max_length();
+    }
+    find_max_length(){
+        const array = this.description.split("\n");
+        let max_length = 0;
+        for(let i=0;i<array.length;i++){
+            max_length = Math.max(max_length, array[i].length);
+        }
+        return max_length;
     }
 }
 //////////////////////////////////////////////////////////////////////
@@ -329,6 +360,7 @@ class Weapon {
         this.damage = damage;
         this.shootRate = shootRate;
         this.bullet_count = bullet_count;
+        this.max_bullet_count = bullet_count;
         this.shoot_sound = shoot_sound;
         this.image = image;
         this.length = length;
@@ -358,7 +390,28 @@ class Player {
         this.bazooka = new Weapon(3, 100, 5, 'bazooka_shot_sound','bazooka','missile.png', 150, 45, 80, 5, 80);
         this.weapon = this.uzi;
         this.money = 0;
-        this.items = [new Item('key2','item_key2', 'Key for entering the dark \nside of the castle')];
+        this.items = [new Item('key2','item_key2', 'Key for entering the dark \nside of the castle'),
+        new Item('fishing pole','item_fishingpole',
+        'A fishing pole\npress F to start fishing'),
+        new Item('larva', 'item_larva', 'This is a perfect\nbait for fishing'),
+        new Item('key1', 'item_key1', 'This is a perfect\nbait for fishing'),
+        new Item('shovel', 'item_shovel', 'A shovel, can be\nused to dig things')];
+    }
+    get_item(item_name){
+        for(let i=0;i<this.items.length;i++){
+            if(this.items[i].name==item_name){
+                return i;
+            }
+        }
+        return -1;
+    }
+    add_item(name, image, description){
+        if(this.get_item(name)==-1){
+            console.log('sdsd')
+            this.items.push(new Item(name, image, description));  
+        }else{
+            this.items[this.get_item(name)].quantity++;
+        }
     }
 }
 //////////////////////////////////////////////////////////////////////

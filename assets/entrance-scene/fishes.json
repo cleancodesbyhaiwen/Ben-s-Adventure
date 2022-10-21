@@ -4,13 +4,34 @@
 			"image": "fishes.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 4094,
-				"h": 3027
+				"w": 8017,
+				"h": 2395
 			},
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "sword-fish-swim__004.png",
+					"filename": "sword-fish-swim__000.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 1033,
+						"h": 413
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1033,
+						"h": 413
+					}
+				},
+				{
+					"filename": "sword-fish-swim__008.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -19,15 +40,351 @@
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 16,
-						"w": 804,
-						"h": 384
+						"y": 0,
+						"w": 1030,
+						"h": 412
 					},
 					"frame": {
 						"x": 1,
+						"y": 416,
+						"w": 1030,
+						"h": 412
+					}
+				},
+				{
+					"filename": "sword-fish-swim__009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
 						"y": 1,
-						"w": 804,
-						"h": 384
+						"w": 1007,
+						"h": 411
+					},
+					"frame": {
+						"x": 1,
+						"y": 830,
+						"w": 1007,
+						"h": 411
+					}
+				},
+				{
+					"filename": "sword-fish-swim__015.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 999,
+						"h": 410
+					},
+					"frame": {
+						"x": 1,
+						"y": 1243,
+						"w": 999,
+						"h": 410
+					}
+				},
+				{
+					"filename": "sword-fish-swim__010.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 4,
+						"w": 978,
+						"h": 408
+					},
+					"frame": {
+						"x": 1,
+						"y": 1655,
+						"w": 978,
+						"h": 408
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_08.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 591,
+						"h": 329
+					},
+					"frame": {
+						"x": 1,
+						"y": 2065,
+						"w": 591,
+						"h": 329
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_08.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 591,
+						"h": 329
+					},
+					"frame": {
+						"x": 594,
+						"y": 2065,
+						"w": 591,
+						"h": 329
+					}
+				},
+				{
+					"filename": "sword-fish-swim__001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 4,
+						"w": 977,
+						"h": 406
+					},
+					"frame": {
+						"x": 981,
+						"y": 1655,
+						"w": 977,
+						"h": 406
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 618,
+						"h": 330
+					},
+					"frame": {
+						"x": 1187,
+						"y": 2063,
+						"w": 618,
+						"h": 330
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_10.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 618,
+						"h": 330
+					},
+					"frame": {
+						"x": 1807,
+						"y": 2063,
+						"w": 618,
+						"h": 330
+					}
+				},
+				{
+					"filename": "sword-fish-swim__007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 4,
+						"w": 973,
+						"h": 406
+					},
+					"frame": {
+						"x": 1002,
+						"y": 1243,
+						"w": 973,
+						"h": 406
+					}
+				},
+				{
+					"filename": "sword-fish-swim__014.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 5,
+						"w": 968,
+						"h": 406
+					},
+					"frame": {
+						"x": 1960,
+						"y": 1651,
+						"w": 968,
+						"h": 406
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 614,
+						"h": 335
+					},
+					"frame": {
+						"x": 2427,
+						"y": 2059,
+						"w": 614,
+						"h": 335
+					}
+				},
+				{
+					"filename": "sword-fish-swim__011.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 6,
+						"w": 948,
+						"h": 405
+					},
+					"frame": {
+						"x": 1010,
+						"y": 830,
+						"w": 948,
+						"h": 405
+					}
+				},
+				{
+					"filename": "sword-fish-swim__013.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 937,
+						"h": 404
+					},
+					"frame": {
+						"x": 1033,
+						"y": 416,
+						"w": 937,
+						"h": 404
+					}
+				},
+				{
+					"filename": "sword-fish-swim__012.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 9,
+						"w": 918,
+						"h": 401
+					},
+					"frame": {
+						"x": 1960,
+						"y": 822,
+						"w": 918,
+						"h": 401
+					}
+				},
+				{
+					"filename": "sword-fish-swim__002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 919,
+						"h": 399
+					},
+					"frame": {
+						"x": 1977,
+						"y": 1225,
+						"w": 919,
+						"h": 399
+					}
+				},
+				{
+					"filename": "sword-fish-swim__006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1033,
+						"h": 413
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 8,
+						"w": 916,
+						"h": 399
+					},
+					"frame": {
+						"x": 1036,
+						"y": 1,
+						"w": 916,
+						"h": 399
 					}
 				},
 				{
@@ -45,7 +402,7 @@
 						"h": 392
 					},
 					"frame": {
-						"x": 807,
+						"x": 1954,
 						"y": 1,
 						"w": 862,
 						"h": 392
@@ -66,14 +423,14 @@
 						"h": 392
 					},
 					"frame": {
-						"x": 1671,
-						"y": 1,
+						"x": 1972,
+						"y": 395,
 						"w": 859,
 						"h": 392
 					}
 				},
 				{
-					"filename": "sword-fish-swim__002.png",
+					"filename": "sword-fish-swim__004.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -82,796 +439,40 @@
 					},
 					"spriteSourceSize": {
 						"x": 0,
-						"y": 8,
-						"w": 919,
-						"h": 399
+						"y": 16,
+						"w": 804,
+						"h": 384
 					},
 					"frame": {
-						"x": 2532,
+						"x": 2818,
 						"y": 1,
-						"w": 919,
-						"h": 399
+						"w": 804,
+						"h": 384
 					}
 				},
 				{
-					"filename": "__green_puffer_fish_inflated_idle_010.png",
+					"filename": "__purple_angler_fish_swim_00.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 83,
-						"y": 141,
-						"w": 426,
-						"h": 411
-					},
-					"frame": {
-						"x": 3453,
-						"y": 1,
-						"w": 426,
-						"h": 411
-					}
-				},
-				{
-					"filename": "sword-fish-swim__006.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 8,
-						"w": 916,
-						"h": 399
-					},
-					"frame": {
-						"x": 1,
-						"y": 395,
-						"w": 916,
-						"h": 399
-					}
-				},
-				{
-					"filename": "sword-fish-swim__012.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 9,
-						"w": 918,
-						"h": 401
-					},
-					"frame": {
-						"x": 919,
-						"y": 395,
-						"w": 918,
-						"h": 401
-					}
-				},
-				{
-					"filename": "sword-fish-swim__013.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
+						"w": 622,
+						"h": 451
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 7,
-						"w": 937,
-						"h": 404
+						"w": 622,
+						"h": 338
 					},
 					"frame": {
-						"x": 1839,
-						"y": 402,
-						"w": 937,
-						"h": 404
+						"x": 2833,
+						"y": 387,
+						"w": 622,
+						"h": 338
 					}
 				},
 				{
-					"filename": "__green_puffer_fish_inflated_idle_009.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 82,
-						"y": 140,
-						"w": 430,
-						"h": 412
-					},
-					"frame": {
-						"x": 2778,
-						"y": 402,
-						"w": 430,
-						"h": 412
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_011.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 82,
-						"y": 140,
-						"w": 431,
-						"h": 412
-					},
-					"frame": {
-						"x": 3210,
-						"y": 414,
-						"w": 431,
-						"h": 412
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_008.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 81,
-						"y": 139,
-						"w": 435,
-						"h": 413
-					},
-					"frame": {
-						"x": 3643,
-						"y": 414,
-						"w": 435,
-						"h": 413
-					}
-				},
-				{
-					"filename": "sword-fish-swim__011.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 6,
-						"w": 948,
-						"h": 405
-					},
-					"frame": {
-						"x": 1,
-						"y": 798,
-						"w": 948,
-						"h": 405
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_012.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 81,
-						"y": 139,
-						"w": 436,
-						"h": 413
-					},
-					"frame": {
-						"x": 951,
-						"y": 798,
-						"w": 436,
-						"h": 413
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_007.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 80,
-						"y": 138,
-						"w": 440,
-						"h": 414
-					},
-					"frame": {
-						"x": 1389,
-						"y": 798,
-						"w": 440,
-						"h": 414
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_013.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 80,
-						"y": 138,
-						"w": 441,
-						"h": 414
-					},
-					"frame": {
-						"x": 1831,
-						"y": 808,
-						"w": 441,
-						"h": 414
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_006.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 79,
-						"y": 137,
-						"w": 445,
-						"h": 416
-					},
-					"frame": {
-						"x": 2274,
-						"y": 808,
-						"w": 445,
-						"h": 416
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_005.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 78,
-						"y": 136,
-						"w": 451,
-						"h": 417
-					},
-					"frame": {
-						"x": 2721,
-						"y": 816,
-						"w": 451,
-						"h": 417
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_004.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 77,
-						"y": 135,
-						"w": 456,
-						"h": 418
-					},
-					"frame": {
-						"x": 3174,
-						"y": 828,
-						"w": 456,
-						"h": 418
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_003.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 76,
-						"y": 134,
-						"w": 461,
-						"h": 419
-					},
-					"frame": {
-						"x": 3632,
-						"y": 829,
-						"w": 461,
-						"h": 419
-					}
-				},
-				{
-					"filename": "sword-fish-swim__001.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 4,
-						"w": 977,
-						"h": 406
-					},
-					"frame": {
-						"x": 1,
-						"y": 1213,
-						"w": 977,
-						"h": 406
-					}
-				},
-				{
-					"filename": "sword-fish-swim__007.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 4,
-						"w": 973,
-						"h": 406
-					},
-					"frame": {
-						"x": 980,
-						"y": 1224,
-						"w": 973,
-						"h": 406
-					}
-				},
-				{
-					"filename": "sword-fish-swim__014.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 5,
-						"w": 968,
-						"h": 406
-					},
-					"frame": {
-						"x": 1955,
-						"y": 1235,
-						"w": 968,
-						"h": 406
-					}
-				},
-				{
-					"filename": "sword-fish-swim__010.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 4,
-						"w": 978,
-						"h": 408
-					},
-					"frame": {
-						"x": 2925,
-						"y": 1250,
-						"w": 978,
-						"h": 408
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_002.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 75,
-						"y": 133,
-						"w": 466,
-						"h": 421
-					},
-					"frame": {
-						"x": 1,
-						"y": 1621,
-						"w": 466,
-						"h": 421
-					}
-				},
-				{
-					"filename": "sword-fish-swim__015.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 2,
-						"w": 999,
-						"h": 410
-					},
-					"frame": {
-						"x": 469,
-						"y": 1632,
-						"w": 999,
-						"h": 410
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflate_004.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 79,
-						"y": 136,
-						"w": 449,
-						"h": 422
-					},
-					"frame": {
-						"x": 1470,
-						"y": 1632,
-						"w": 449,
-						"h": 422
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflate_005.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 79,
-						"y": 136,
-						"w": 449,
-						"h": 422
-					},
-					"frame": {
-						"x": 1921,
-						"y": 1643,
-						"w": 449,
-						"h": 422
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_001.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 74,
-						"y": 132,
-						"w": 470,
-						"h": 422
-					},
-					"frame": {
-						"x": 2372,
-						"y": 1643,
-						"w": 470,
-						"h": 422
-					}
-				},
-				{
-					"filename": "sword-fish-swim__009.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 1,
-						"w": 1007,
-						"h": 411
-					},
-					"frame": {
-						"x": 2844,
-						"y": 1660,
-						"w": 1007,
-						"h": 411
-					}
-				},
-				{
-					"filename": "sword-fish-swim__008.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 1030,
-						"h": 412
-					},
-					"frame": {
-						"x": 1,
-						"y": 2044,
-						"w": 1030,
-						"h": 412
-					}
-				},
-				{
-					"filename": "__green_puffer_fish_inflated_idle_000.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 634,
-						"h": 640
-					},
-					"spriteSourceSize": {
-						"x": 73,
-						"y": 131,
-						"w": 475,
-						"h": 423
-					},
-					"frame": {
-						"x": 1033,
-						"y": 2056,
-						"w": 475,
-						"h": 423
-					}
-				},
-				{
-					"filename": "sword-fish-swim__000.png",
-					"rotated": false,
-					"trimmed": false,
-					"sourceSize": {
-						"w": 1033,
-						"h": 413
-					},
-					"spriteSourceSize": {
-						"x": 0,
-						"y": 0,
-						"w": 1033,
-						"h": 413
-					},
-					"frame": {
-						"x": 1510,
-						"y": 2067,
-						"w": 1033,
-						"h": 413
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_000.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 20,
-						"y": 18,
-						"w": 479,
-						"h": 456
-					},
-					"frame": {
-						"x": 2545,
-						"y": 2073,
-						"w": 479,
-						"h": 456
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_009.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 16,
-						"y": 28,
-						"w": 491,
-						"h": 456
-					},
-					"frame": {
-						"x": 3026,
-						"y": 2073,
-						"w": 491,
-						"h": 456
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_001.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 16,
-						"y": 28,
-						"w": 471,
-						"h": 457
-					},
-					"frame": {
-						"x": 3519,
-						"y": 2073,
-						"w": 471,
-						"h": 457
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_002.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 13,
-						"y": 32,
-						"w": 462,
-						"h": 465
-					},
-					"frame": {
-						"x": 1,
-						"y": 2458,
-						"w": 462,
-						"h": 465
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_008.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 13,
-						"y": 31,
-						"w": 501,
-						"h": 466
-					},
-					"frame": {
-						"x": 465,
-						"y": 2458,
-						"w": 501,
-						"h": 466
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_003.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 11,
-						"y": 35,
-						"w": 493,
-						"h": 477
-					},
-					"frame": {
-						"x": 968,
-						"y": 2481,
-						"w": 493,
-						"h": 477
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_007.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 11,
-						"y": 35,
-						"w": 525,
-						"h": 477
-					},
-					"frame": {
-						"x": 1463,
-						"y": 2482,
-						"w": 525,
-						"h": 477
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_004.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 8,
-						"y": 42,
-						"w": 553,
-						"h": 488
-					},
-					"frame": {
-						"x": 1990,
-						"y": 2482,
-						"w": 553,
-						"h": 488
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_006.png",
-					"rotated": false,
-					"trimmed": true,
-					"sourceSize": {
-						"w": 613,
-						"h": 605
-					},
-					"spriteSourceSize": {
-						"x": 8,
-						"y": 42,
-						"w": 568,
-						"h": 487
-					},
-					"frame": {
-						"x": 2545,
-						"y": 2531,
-						"w": 568,
-						"h": 487
-					}
-				},
-				{
-					"filename": "__lion_fish_blue_swim_005.png",
+					"filename": "__lion_fish_pink_swim_005.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -885,10 +486,1081 @@
 						"h": 494
 					},
 					"frame": {
-						"x": 3115,
-						"y": 2532,
+						"x": 2880,
+						"y": 727,
 						"w": 606,
 						"h": 494
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_00.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 7,
+						"w": 622,
+						"h": 338
+					},
+					"frame": {
+						"x": 3457,
+						"y": 387,
+						"w": 622,
+						"h": 338
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_01.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 614,
+						"h": 335
+					},
+					"frame": {
+						"x": 3624,
+						"y": 1,
+						"w": 614,
+						"h": 335
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 614,
+						"h": 331
+					},
+					"frame": {
+						"x": 2898,
+						"y": 1223,
+						"w": 614,
+						"h": 331
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 42,
+						"w": 568,
+						"h": 487
+					},
+					"frame": {
+						"x": 3488,
+						"y": 727,
+						"w": 568,
+						"h": 487
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 42,
+						"w": 553,
+						"h": 488
+					},
+					"frame": {
+						"x": 2930,
+						"y": 1556,
+						"w": 553,
+						"h": 488
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_11.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 614,
+						"h": 331
+					},
+					"frame": {
+						"x": 3043,
+						"y": 2046,
+						"w": 614,
+						"h": 331
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 35,
+						"w": 525,
+						"h": 477
+					},
+					"frame": {
+						"x": 3485,
+						"y": 1556,
+						"w": 525,
+						"h": 477
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 604,
+						"h": 332
+					},
+					"frame": {
+						"x": 3514,
+						"y": 1216,
+						"w": 604,
+						"h": 332
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_02.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 604,
+						"h": 332
+					},
+					"frame": {
+						"x": 3659,
+						"y": 2035,
+						"w": 604,
+						"h": 332
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 35,
+						"w": 493,
+						"h": 477
+					},
+					"frame": {
+						"x": 4058,
+						"y": 727,
+						"w": 493,
+						"h": 477
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_09.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 607,
+						"h": 330
+					},
+					"frame": {
+						"x": 4081,
+						"y": 338,
+						"w": 607,
+						"h": 330
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_09.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 607,
+						"h": 330
+					},
+					"frame": {
+						"x": 4240,
+						"y": 1,
+						"w": 607,
+						"h": 330
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 31,
+						"w": 501,
+						"h": 466
+					},
+					"frame": {
+						"x": 4012,
+						"y": 1550,
+						"w": 501,
+						"h": 466
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 596,
+						"h": 335
+					},
+					"frame": {
+						"x": 4120,
+						"y": 1206,
+						"w": 596,
+						"h": 335
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_15.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 10,
+						"w": 596,
+						"h": 335
+					},
+					"frame": {
+						"x": 4265,
+						"y": 2018,
+						"w": 596,
+						"h": 335
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 28,
+						"w": 491,
+						"h": 456
+					},
+					"frame": {
+						"x": 4515,
+						"y": 1543,
+						"w": 491,
+						"h": 456
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 603,
+						"h": 331
+					},
+					"frame": {
+						"x": 4863,
+						"y": 2001,
+						"w": 603,
+						"h": 331
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 18,
+						"w": 479,
+						"h": 456
+					},
+					"frame": {
+						"x": 4553,
+						"y": 670,
+						"w": 479,
+						"h": 456
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_12.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 603,
+						"h": 331
+					},
+					"frame": {
+						"x": 4690,
+						"y": 333,
+						"w": 603,
+						"h": 331
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 577,
+						"h": 330
+					},
+					"frame": {
+						"x": 4849,
+						"y": 1,
+						"w": 577,
+						"h": 330
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 598,
+						"h": 332
+					},
+					"frame": {
+						"x": 4718,
+						"y": 1128,
+						"w": 598,
+						"h": 332
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 16,
+						"y": 28,
+						"w": 471,
+						"h": 457
+					},
+					"frame": {
+						"x": 5034,
+						"y": 666,
+						"w": 471,
+						"h": 457
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 587,
+						"h": 331
+					},
+					"frame": {
+						"x": 5295,
+						"y": 333,
+						"w": 587,
+						"h": 331
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_07.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 577,
+						"h": 330
+					},
+					"frame": {
+						"x": 5428,
+						"y": 1,
+						"w": 577,
+						"h": 330
+					}
+				},
+				{
+					"filename": "__lion_fish_pink_swim_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 613,
+						"h": 605
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 32,
+						"w": 462,
+						"h": 465
+					},
+					"frame": {
+						"x": 5008,
+						"y": 1462,
+						"w": 462,
+						"h": 465
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_13.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 598,
+						"h": 332
+					},
+					"frame": {
+						"x": 5318,
+						"y": 1125,
+						"w": 598,
+						"h": 332
+					}
+				},
+				{
+					"filename": "__orange_puffer_fish_swim_inflated_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 71,
+						"y": 134,
+						"w": 476,
+						"h": 425
+					},
+					"frame": {
+						"x": 5507,
+						"y": 666,
+						"w": 476,
+						"h": 425
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_04.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 587,
+						"h": 331
+					},
+					"frame": {
+						"x": 5884,
+						"y": 333,
+						"w": 587,
+						"h": 331
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 571,
+						"h": 330
+					},
+					"frame": {
+						"x": 6007,
+						"y": 1,
+						"w": 571,
+						"h": 330
+					}
+				},
+				{
+					"filename": "__pink_puffer_fish_swim_inflated_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 71,
+						"y": 134,
+						"w": 476,
+						"h": 425
+					},
+					"frame": {
+						"x": 5468,
+						"y": 1929,
+						"w": 476,
+						"h": 425
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 595,
+						"h": 332
+					},
+					"frame": {
+						"x": 5472,
+						"y": 1459,
+						"w": 595,
+						"h": 332
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_03.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 595,
+						"h": 332
+					},
+					"frame": {
+						"x": 5918,
+						"y": 1093,
+						"w": 595,
+						"h": 332
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 585,
+						"h": 332
+					},
+					"frame": {
+						"x": 5985,
+						"y": 666,
+						"w": 585,
+						"h": 332
+					}
+				},
+				{
+					"filename": "__purple_angler_fish_swim_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 580,
+						"h": 331
+					},
+					"frame": {
+						"x": 6473,
+						"y": 333,
+						"w": 580,
+						"h": 331
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_06.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 12,
+						"w": 571,
+						"h": 330
+					},
+					"frame": {
+						"x": 6580,
+						"y": 1,
+						"w": 571,
+						"h": 330
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_14.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 12,
+						"w": 585,
+						"h": 332
+					},
+					"frame": {
+						"x": 5946,
+						"y": 1793,
+						"w": 585,
+						"h": 332
+					}
+				},
+				{
+					"filename": "__red_angler_fish_swim_05.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 622,
+						"h": 451
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 12,
+						"w": 580,
+						"h": 331
+					},
+					"frame": {
+						"x": 6069,
+						"y": 1427,
+						"w": 580,
+						"h": 331
+					}
+				},
+				{
+					"filename": "__orange_puffer_fish_swim_inflated_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 84,
+						"y": 135,
+						"w": 438,
+						"h": 423
+					},
+					"frame": {
+						"x": 6515,
+						"y": 1000,
+						"w": 438,
+						"h": 423
+					}
+				},
+				{
+					"filename": "__pink_puffer_fish_swim_inflated_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 84,
+						"y": 135,
+						"w": 438,
+						"h": 423
+					},
+					"frame": {
+						"x": 6533,
+						"y": 1760,
+						"w": 438,
+						"h": 423
+					}
+				},
+				{
+					"filename": "__orange_puffer_fish_swim_inflated_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 85,
+						"y": 135,
+						"w": 436,
+						"h": 423
+					},
+					"frame": {
+						"x": 6955,
+						"y": 666,
+						"w": 436,
+						"h": 423
+					}
+				},
+				{
+					"filename": "__pink_puffer_fish_swim_inflated_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 85,
+						"y": 135,
+						"w": 436,
+						"h": 423
+					},
+					"frame": {
+						"x": 7153,
+						"y": 1,
+						"w": 436,
+						"h": 423
+					}
+				},
+				{
+					"filename": "__orange_puffer_fish_swim_inflated_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 136,
+						"w": 399,
+						"h": 421
+					},
+					"frame": {
+						"x": 6955,
+						"y": 1091,
+						"w": 399,
+						"h": 421
+					}
+				},
+				{
+					"filename": "__pink_puffer_fish_swim_inflated_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 97,
+						"y": 136,
+						"w": 399,
+						"h": 421
+					},
+					"frame": {
+						"x": 7356,
+						"y": 1091,
+						"w": 399,
+						"h": 421
+					}
+				},
+				{
+					"filename": "__orange_puffer_fish_swim_inflated_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 98,
+						"y": 137,
+						"w": 396,
+						"h": 420
+					},
+					"frame": {
+						"x": 7393,
+						"y": 426,
+						"w": 396,
+						"h": 420
+					}
+				},
+				{
+					"filename": "__pink_puffer_fish_swim_inflated_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 98,
+						"y": 137,
+						"w": 396,
+						"h": 420
+					},
+					"frame": {
+						"x": 7591,
+						"y": 1,
+						"w": 396,
+						"h": 420
+					}
+				},
+				{
+					"filename": "__orange_puffer_fish_swim_inflated_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 111,
+						"y": 138,
+						"w": 359,
+						"h": 418
+					},
+					"frame": {
+						"x": 6973,
+						"y": 1514,
+						"w": 359,
+						"h": 418
+					}
+				},
+				{
+					"filename": "__pink_puffer_fish_swim_inflated_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 111,
+						"y": 138,
+						"w": 359,
+						"h": 418
+					},
+					"frame": {
+						"x": 6973,
+						"y": 1934,
+						"w": 359,
+						"h": 418
+					}
+				},
+				{
+					"filename": "__orange_puffer_fish_swim_inflated_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 112,
+						"y": 138,
+						"w": 356,
+						"h": 418
+					},
+					"frame": {
+						"x": 7334,
+						"y": 1514,
+						"w": 356,
+						"h": 418
+					}
+				},
+				{
+					"filename": "__orange_puffer_fish_swim_inflated_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 124,
+						"y": 139,
+						"w": 324,
+						"h": 416
+					},
+					"frame": {
+						"x": 7692,
+						"y": 1514,
+						"w": 324,
+						"h": 416
+					}
+				},
+				{
+					"filename": "__pink_puffer_fish_swim_inflated_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 124,
+						"y": 139,
+						"w": 324,
+						"h": 416
+					},
+					"frame": {
+						"x": 7692,
+						"y": 1932,
+						"w": 324,
+						"h": 416
+					}
+				},
+				{
+					"filename": "__pink_puffer_fish_swim_inflated_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 634,
+						"h": 640
+					},
+					"spriteSourceSize": {
+						"x": 112,
+						"y": 138,
+						"w": 356,
+						"h": 418
+					},
+					"frame": {
+						"x": 7334,
+						"y": 1934,
+						"w": 356,
+						"h": 418
 					}
 				}
 			]
@@ -897,6 +1569,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:501a6f60c8b79e49817a5bdd699c0b29:c95fef982f2ba970efa64923e13dae93:953948a70e577cbb9460cafcd32a1af8$"
+		"smartupdate": "$TexturePacker:SmartUpdate:e6c6e8525b77c39e7cb4d4fa15d96a6e:e88f722e98c5d059d7c277a799b530c8:953948a70e577cbb9460cafcd32a1af8$"
 	}
 }

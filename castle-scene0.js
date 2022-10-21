@@ -12,6 +12,7 @@ export class castleScene0 extends Phaser.Scene {
         this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
     }
     create(){
+        localStorage.setItem('furtherest_scene', Math.max(localStorage.getItem('furtherest_scene'),4));
         // Initialize Sound and Background
         this.background = this.add.tileSprite(1690,400,3381,800,'background-scene0')
         .setScale(1.01).setDepth(-2);
@@ -45,6 +46,7 @@ export class castleScene0 extends Phaser.Scene {
         });
 
         // Initialize Camera and World Bound
+        this.cameras.main.fadeIn(1000, 0, 0, 0);
         this.cameras.main.setBounds(0, 0, 3381, 700);
         this.physics.world.setBounds(0, 0, 3381,700);
 

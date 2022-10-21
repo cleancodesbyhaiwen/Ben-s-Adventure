@@ -4,7 +4,6 @@ import {DialogHelper} from './helpers/DialogHelper.js'
 import {Item} from './helpers/PlayerHelper.js'
 
 var larva;
-
 export class entranceScene extends Phaser.Scene {
     constructor(){
         super({
@@ -15,6 +14,9 @@ export class entranceScene extends Phaser.Scene {
         this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
     }
     create(){
+
+        localStorage.setItem('furtherest_scene', Math.max(localStorage.getItem('furtherest_scene'),3));
+
         this.shark_jumped = false;
         this.knight_spoke = false;
         this.landed = false;
@@ -24,35 +26,43 @@ export class entranceScene extends Phaser.Scene {
         this.background = this.add.tileSprite(3962.5,400,15850,1600,'background-entrance').setScale(0.51).setDepth(-2);
         this.background_music = this.sound.add('background_music1');
         this.background_music.play({loop:true}); 
+
         // wall plaque and door
+        const wall_plaque = this.add.sprite(7550, 230, 'wall_plaque').setScale(0.5);
         const wall_plaque_rotate = this.sound.add('brick_rotate_sound');
         const door = this.add.sprite(7550, 516, 'door_closed').setScale(0.55).setInteractive()
         .on('pointerdown',function(){
             if(door.texture.key=='door_open'){
-                this.scene.start('castle-scene0')
+                this.background_music.pause();
+                this.cameras.main.fadeOut(1000, 0, 0, 0)
             }
-        },this);
-        const wall_plaque = this.add.sprite(7550, 230, 'wall_plaque').setScale(0.5).setInteractive()
-        .on('pointerdown',function(){
-            if(wall_plaque.angle==0){
-                wall_plaque_rotate.play();     
-                this.add.tween({                                                 
-                    targets: wall_plaque,
-                    angle: 180,
-                    ease: 'Linear',
-                    duration: 5000,
-                    repeat: 0,
-                    onComplete: function(){                                     
-                        door.setTexture('door_open');
-                    }
-                },this)
+            else{
+                if(this.player.get_item('key1')!=-1&&wall_plaque.angle==0){
+                    wall_plaque_rotate.play();     
+                    this.add.tween({                                                 
+                        targets: wall_plaque,
+                        angle: 180,
+                        ease: 'Linear',
+                        duration: 5000,
+                        repeat: 0,
+                        onComplete: function(){                                     
+                            door.setTexture('door_open');
+                        }
+                    },this)
+                }else PlayerHelper.display_message(this, 'You need a key',3000);
             }
         },this);
 
+        this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+            this.scene.start('castle-scene0')
+        })
+
         // Initialize Fishing Pole
         const fishing_pole = this.add.image(6630, 610, 'item_fishingpole').setScale(1.3).setRotation(-0.1)
-        .setInteractive().on('pointerdown',function(){
-            this.player.items.push(new Item('fishing pole','item_fishingpole', 'A fishing pole'));
+        .setInteractive().on('pointerdown',function(){;
+             this.player.add_item('fishing pole','item_fishingpole',
+             'A fishing pole\npress F to start fishing');
+
             fishing_pole.destroy();
         },this);
 
@@ -68,14 +78,13 @@ export class entranceScene extends Phaser.Scene {
 
         // Initialize Player
         this.parachute = this.physics.add.sprite(420, -60, 'parachute').setScale(0.3)
-        PlayerHelper.createPlayer(this, 4050, 506);
+        PlayerHelper.createPlayer(this, 7000, 506);
 
         // Initialize Knight
         //this.knight = KnightHelper.createKnight(this,this.playerContainer, 5050,610,'knight',
         //'bullet_hit_knight_sound','knight_whoosh_sound','hurt_by_knight_sound', 
         //'knight_walk','knight_attack','knight_die','knight_idle',true,11,15); 
 
-        
         // Bridge
         this.add.sprite(4050, 650, 'bridge').setScale(0.25)
         const bridge_collisionbox = this.add.rectangle(4050, 685, 1217, 15, 0x6666ff).setDepth(-1);
@@ -84,50 +93,81 @@ export class entranceScene extends Phaser.Scene {
         bridge_collisionbox.body.setImmovable(true); 
         this.physics.add.collider(this.playerContainer, bridge_collisionbox);
 
-
-
+        // Fishing
         const fishes = [new Fish('key', 'item_key1', undefined),
-                        new Fish('stone fish', 'fishes', 'stone_fish_anims'),
-                        new Fish('puffer fish', 'fishes', 'puffer_fish_anims'),
-                        new Fish('sword fish', 'fishes', 'sword_fish_anims'),]
+                        new Fish('Red Angler', 'fishes', 'red_angler_anims'),
+                        new Fish('Purple Angler', 'fishes', 'purple_angler_anims'),
+                        new Fish('Orange Puffer', 'fishes', 'orange_puffer_anims'),
+                        new Fish('Pink Puffer', 'fishes', 'pink_puffer_anims'),
+                        new Fish('Lion Fish', 'fishes', 'lion_fish_anims'),
+                        new Fish('Sword Fish', 'fishes', 'sword_fish_anims'),]
+
         this.input.keyboard.on('keydown-' + 'F', function (event) { 
-            if(this.playerBody.visible==true&&this.playerContainer.x>3550&&this.playerContainer.x<4250){
-                this.playerBody.setVisible(false);
-                this.playerArm.setVisible(false);
-                this.playerInputEnable = false;
-                this.fishing_player = this.add.sprite(this.playerContainer.x, 595, 'explorer').setScale(0.3);
-                this.fishing_player.anims.play('fishing');
-                this.strike_button = this.add.image(this.playerContainer.x+200, 550, 'strike_button').setScale(0.3)
-                .setInteractive().on('pointerdown', function(){
-                    for(var i=0;i<this.player.items.length;i++){
-                        if(this.player.items[i].name='larva'){
-                            this.player.items.splice(i, 1);
-                        }
-                    }
-                    this.fishing_player.y = this.fishing_player.y - 40;
-                    this.fishing_player.anims.play('striking').on('animationcomplete', () =>{
-                        this.playerBody.setVisible(true);
-                        this.playerArm.setVisible(true);
-                        this.playerInputEnable = true;
-                        this.fishing_player.destroy();
-                        this.strike_button.destroy();
-                    },this);
-                    const fish = fishes.pop();
-                    this.fish = this.add.sprite(this.playerContainer.x+100, 900, fish.image).setScale(0.2);
-                    this.fish.name = fish.name;
-                    this.fish.angle = 90;
-                    if(fish.anims!=undefined) this.fish.anims.play(fish.anims);
-                    this.sound.add('splash_sound').play();
-                    const splash = this.add.sprite(this.playerContainer.x+100, 750, 'splash').setScale(0.2)
-                    this.sound.add('splash_sound').play();
-                    splash.anims.play('splash_anims').on('animationcomplete', () =>{
-                        splash.destroy();
-                    });
-                },this)
-            }
+            if(this.playerBody.visible==true&&this.playerContainer.x>3550
+                &&this.playerContainer.x<4250){
+                    if(this.player.get_item('fishing pole')!=-1){
+                        this.playerBody.setVisible(false);
+                        this.playerArm.setVisible(false);
+                        this.playerInputEnable = false;
+                        this.fishing_player = this.add.sprite(this.playerContainer.x+80, 595, 'explorer').setScale(0.3).setDepth(-1);
+                        this.fishing_player.anims.play('fishing');
+                        this.strike_button = this.add.image(this.playerContainer.x+200, 550, 'strike_button').setScale(0.3)
+                        .setInteractive().on('pointerdown', function(){
+                            if(this.player.get_item('larva')==-1||this.player.items[this.player.get_item('larva')].quantity==0){
+                                PlayerHelper.display_message(this, 'You need a bait', 3000)
+                            }else{
+                                this.player.items[this.player.get_item('larva')].quantity--;
+
+                                const fish = fishes[Math.floor(Math.random()*4)];
+                                this.fish = this.add.sprite(this.playerContainer.x+180, 900, fish.image).setScale(0.2);
+                                this.fish.name = fish.name;
+                                this.fish.angle = 90;
+                                if(fish.anims!=undefined) this.fish.anims.play(fish.anims);
+                                let scene = this;
+                                this.add.tween({                                                 
+                                    targets: this.fish,
+                                    y: 550,
+                                    ease: 'Linear',
+                                    duration: 1000,
+                                    repeat: 0,
+                                    onComplete: function(){       
+                                        console.log(scene)                              
+                                        if(scene.fish.name=='key'){
+                                            if(!scene.key_added){
+                                                scene.player.add_item('key1','item_key1', 'Key for entering \nthe castle');
+                                                scene.key_added = true;
+                                            }
+                                        }
+                                        scene.fish.destroy();
+                                    }
+                                })
+                                this.sound.add('splash_sound').play();
+                                const splash = this.add.sprite(this.playerContainer.x+180, 750, 'splash').setScale(0.2)
+                                this.sound.add('splash_sound').play();
+                                splash.anims.play('splash_anims').on('animationcomplete', () =>{
+                                    splash.destroy();
+                                });
+
+                            }
+                            this.fishing_player.y = this.fishing_player.y - 35;
+                            this.fishing_player.anims.play('striking').on('animationcomplete', () =>{
+                                this.playerBody.setVisible(true);
+                                this.playerArm.setVisible(true);
+                                this.playerInputEnable = true;
+                                this.fishing_player.destroy();
+                                this.strike_button.destroy();
+                            },this);
+        
+                        },this)
+                        .on('pointerover', function(){this.setScale(0.33);})
+                        .on('pointerout', function(){this.setScale(0.3);})
+                    }else PlayerHelper.display_message(this, 'You need a fishing pole', 3000);
+            }else PlayerHelper.display_message(this, 'You can only fish on the bridge', 3000);
         },this);
 
+        // Digging Larva
         this.input.keyboard.on('keydown-' + 'G', function (event) { 
+            if(larva!=undefined) larva.destroy();
             if(this.playerBody.visible==true&&this.playerContainer.x<3000){
                 this.playerBody.setVisible(false);
                 this.playerArm.setVisible(false);
@@ -137,20 +177,14 @@ export class entranceScene extends Phaser.Scene {
                 this.time.addEvent({
                     delay: 3000,
                     callback: ()=>{  
-                        larva = this.add.sprite(this.playerContainer.x+70, 750, 'larva').setScale(0.16);
-                        larva.anims.play('larva_wiggle');  
-                        this.add.tween({                                                 
-                            targets: larva,
-                            x: this.cameras.main.scrollX+60,
-                            y: 120,
-                            ease: 'Linear',
-                            duration: 3000,
-                            repeat: 0,
-                            onComplete: function(){                                     
-                                larva.destroy();  
-                            }
-                        },this) 
-                        this.player.items.push(new Item('larva', 'item_larva', 'This is a perfect\n bait for fishing'))                         
+                        larva = this.add.sprite(this.playerContainer.x+70, 720, 'larva').setScale(0.16)
+                        .setInteractive().on('pointerdown',function(){
+                            this.player.add_item('larva','item_larva','This is a perfect\nbait for fishing');
+                            localStorage.setItem('items', this.player.items);
+                            larva.destroy();
+                            larva = undefined;
+                        },this);
+                        larva.anims.play('larva_wiggle');                                     
                         this.playerBody.setVisible(true);
                         this.playerArm.setVisible(true);
                         this.playerInputEnable = true;
@@ -164,29 +198,12 @@ export class entranceScene extends Phaser.Scene {
         },this);
     }
     update(){
-
         if(this.digging_player!=undefined){
             if(this.digging_player.anims.currentFrame.index==4
             &&this.digging_player.anims.currentFrame.index != this.digging_player.last_frame_index){
                 this.sound.add('shovel_digging_sound').play();
             }
             this.digging_player.last_frame_index = this.digging_player.anims.currentFrame.index;
-        }
-
-        
-
-
-        if(this.fish){
-            this.fish.y -= 5;
-            if(this.fish.y<=550){
-                if(this.fish.name=='key'){
-                    if(!this.key_added){
-                        this.player.items.push(new Item('key1','item_key1', 'Key for entering \nthe castle'));
-                        this.key_added = true;
-                    }
-                }
-                this.fish.destroy();
-            }
         }
 
         if(this.playerContainer.x > 4040 && !this.shark_jumped){
