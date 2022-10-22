@@ -41,12 +41,21 @@ export class loadingScene extends Phaser.Scene{
         this.load.image("credits_button","./assets/menu-scene/credits_button.png");
         this.load.image("controls_panel","./assets/menu-scene/controls_panel.png");
         this.load.image("credits_panel","./assets/menu-scene/credits_panel.png");
+        this.load.audio('mouse_hover_sound', 'assets/menu-scene/mouse_hover.mp3');
         // Book scene specific
         this.load.image("book","./assets/book-scene/book.png");
         this.load.image("book_background","./assets/book-scene/book_background.png");
         this.load.atlas('page', './assets/book-scene/page.png','./assets/book-scene/page.json');
         this.load.image("background-book","./assets/book-scene/background.png");
         this.load.image("candle","./assets/book-scene/candle.png");
+        this.load.audio('background_music_book', 'assets/book-scene/background_music.wav');
+        this.load.image("tiara","./assets/book-scene/tiara.png");
+        this.load.image("crown","./assets/book-scene/crown.png");
+        this.load.image("lantern","./assets/book-scene/lantern.png");
+        this.load.image("bracelet","./assets/book-scene/bracelet.png");
+        this.load.image("necklace","./assets/book-scene/necklace.png");
+        this.load.image("scarab","./assets/book-scene/scarab.png");
+        this.load.image("chalice","./assets/book-scene/chalice.png");
         //Plane scene specific
         this.load.image("background-plane","./assets/plane-scene/background.png");
         this.load.image("plane","./assets/plane-scene/plane.png");

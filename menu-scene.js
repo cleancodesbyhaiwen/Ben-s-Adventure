@@ -14,7 +14,8 @@ export class menuScene extends Phaser.Scene {
         this.background = this.add.tileSprite(600,400, 1200,800,'background-menu').setDepth(-2);
         const background_music = this.sound.add('background_music_menu');
         background_music.play({loop:true}); 
-
+        const mouse_hover = this.sound.add('mouse_hover_sound');
+        
         //localStorage.setItem('furtherest_scene', 1);
         const furtherest_scene_numebr = localStorage.getItem('furtherest_scene');
         var furtherest_scene = '';
@@ -35,10 +36,11 @@ export class menuScene extends Phaser.Scene {
             furtherest_scene = 'book-scene'
         }
         // NEW GAME 
-        this.add.text(460,250,'NEW GAME',{font: '50px groovy',fill: '#d0d3d9'}).setInteractive()
+        const new_game = this.add.text(460,250,'NEW GAME',{font: '50px groovy',fill: '#d0d3d9'}).setInteractive()
         .on('pointerover',function(){
             this.pointer_left = this.add.text(420, 250, '>',{font: '50px groovy',fill: '#d0d3d9'});
             this.pointer_right = this.add.text(760, 250, '<',{font: '50px groovy',fill: '#d0d3d9'});
+            mouse_hover.play();
         },this)
         .on('pointerout',function(){
             this.pointer_left.destroy();
@@ -47,13 +49,14 @@ export class menuScene extends Phaser.Scene {
         .on('pointerdown',function(){
             background_music.pause(); 
             this.scene.start('book-scene')
-        },this)
-        
+        },this);
+
         // CONTINUE
         this.add.text(470,320,'CONTINUE',{font: '50px groovy',fill: '#d0d3d9'}).setInteractive()
         .on('pointerover',function(){
             this.pointer_left = this.add.text(440, 320, '>',{font: '50px groovy',fill: '#d0d3d9'});
             this.pointer_right = this.add.text(740, 320, '<',{font: '50px groovy',fill: '#d0d3d9'});
+            mouse_hover.play();
         },this)
         .on('pointerout',function(){
             this.pointer_left.destroy();
@@ -69,6 +72,7 @@ export class menuScene extends Phaser.Scene {
         .on('pointerover',function(){
             this.pointer_left = this.add.text(450, 390, '>',{font: '50px groovy',fill: '#d0d3d9'});
             this.pointer_right = this.add.text(725, 390, '<',{font: '50px groovy',fill: '#d0d3d9'});
+            mouse_hover.play();
         },this)
         .on('pointerout',function(){
             this.pointer_left.destroy();
@@ -84,6 +88,7 @@ export class menuScene extends Phaser.Scene {
         .on('pointerover',function(){
             this.pointer_left = this.add.text(425, 460, '>',{font: '50px groovy',fill: '#d0d3d9'});
             this.pointer_right = this.add.text(750, 460, '<',{font: '50px groovy',fill: '#d0d3d9'});
+            mouse_hover.play();
         },this)
         .on('pointerout',function(){
             this.pointer_left.destroy();
@@ -94,6 +99,7 @@ export class menuScene extends Phaser.Scene {
             this.scene.launch('popup-scene',{parentScene: this, imgKey: 'controls_panel'});
         },this)
 
+        // Initialize torches
         const torches = this.add.group();
         torches.create(125,250,'fire').setScale(0.6).setDepth(-1);
         torches.create(1080,250,'fire').setScale(0.6).setDepth(-1);

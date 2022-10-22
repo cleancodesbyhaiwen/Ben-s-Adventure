@@ -13,6 +13,8 @@ export class skyScene extends Phaser.Scene {
         this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
     }
     create(){
+        this.cameras.main.fadeIn(2000, 0, 0, 0);
+
         localStorage.setItem('furtherest_scene', Math.max(localStorage.getItem('furtherest_scene'),2));
         // Initialize Sound and Background
         this.background = this.add.tileSprite(1340,400,2680,800,'background-plane')
